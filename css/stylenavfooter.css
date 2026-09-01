@@ -51,7 +51,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.95rem 2.5rem;
+  padding: 0.6rem 2.5rem;
   font-family: var(--font-family);
   position: relative;
 }
@@ -60,21 +60,22 @@
 .nav-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
   text-decoration: none;
-  color: var(--color-primary);
-  font-size: 1.45rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
 }
 
 .nav-brand svg,
-.nav-brand .brand-icon {
-  width: 26px;
-  height: 26px;
-  fill: var(--color-primary);
+.nav-brand .brand-icon,
+.nav-brand .brand-logo {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
   display: inline-block;
   flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.nav-brand:hover .brand-logo {
+  transform: scale(1.04);
 }
 
 /* Contenedor del Menú (Desktop) */
@@ -239,19 +240,17 @@
 .footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
   text-decoration: none;
-  color: var(--color-primary);
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
 }
 
 .footer-brand svg,
-.footer-brand .brand-icon {
-  width: 24px;
-  height: 24px;
-  fill: var(--color-primary);
+.footer-brand .brand-icon,
+.footer-brand .brand-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .footer-description {
