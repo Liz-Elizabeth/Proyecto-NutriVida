@@ -1,15 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutriVida-Servicios</title>
+    <title>NutriVida - Servicios</title>
+    <link rel="stylesheet" href="css/stylefuentes.css">
     <link rel="stylesheet" href="css/styleindex.css">
 </head>
 
 <body>
-    <h1>hola servicios</h1>
+
+    <!-- Header & Navigation -->
+    <header class="nav-header">
+        <nav class="nav">
+            <!-- Brand / Logo -->
+            <a href="index.html" class="nav-brand">
+                <img src="assets/img/logo-nutrivida.png" alt="NutriVida" class="brand-logo">
+            </a>
+
+            <!-- Navigation Links & Actions -->
+            <div class="nav-menu-wrapper" id="nav-menu-wrapper">
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="servicios.html" class="nav-link active">Productos</a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-login">Login</a>
+                    <a href="registro.html" class="nav-btn-register">Registro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="servicios">
+            <div class="Nuestros-servicios">
+                <h1>Nuestros servicios</h1>
+                <p>
+                    Descubre nuestros planes nutricionales y consultas diseñadas para guiarte hacia un estilo de
+                    vida</br>
+                    más saludable de manera orgánica y profesional.
+                </p>
+            </div>
+
+            <div class="contenedor-filtros">
+                <button class="btn-filtro active" id="todos">Todos</button>
+                <button class="btn-filtro" id="planes">Planes nutricionales</button>
+                <button class="btn-filtro" id="consultas">Consultas</button>
+                <button class="btn-filtro" id="seguimiento">Pack de Seguimiento</button>
+            </div>
+
+            <!-- Grid de Servicios -->
+            <div class="contenedor-grid">
+
+                <!-- Card 1: Plan Integral Mensual -->
+                <a href="plan-integral.html" class="card-service" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%), url('assets/img/plan-integral-mensual.jpg');">
+                    <div class="card-header">
+                        <span class="tag">Plan</span>
+                        <h3 class="product-title">Plan Integral Mensual</h3>
+                        <p class="product-subtitle">Un plan personalizado de 30 días enfocado en tus objetivos específicos, con menús semanales detallados.</p>
+                        <p class="product-price">$30.000 CLP/mes</p>
+                    </div>
+                </a>
+
+                <!-- Card 2: Consulta Presencial -->
+                <a href="consulta-presencial.html" class="card-service" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%), url('assets/img/consulta-nutricional.jpg');">
+                    <div class="card-header">
+                        <span class="tag">Consulta</span>
+                        <h3 class="product-title">Consulta Presencial</h3>
+                        <p class="product-subtitle">Evaluación corporal completa, medición de pliegues y entrega de pauta nutricional en clínica.</p>
+                        <p class="product-price">$25.000 CLP/sesión</p>
+                    </div>
+                </a>
+
+                <!-- Card 3: Pack de Seguimiento -->
+                <a href="pack-seguimiento.html" class="card-service" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%), url('assets/img/pack-seguimiento.jpg');">
+                    <div class="card-header">
+                        <span class="tag">Pack</span>
+                        <h3 class="product-title">Pack de Seguimiento</h3>
+                        <p class="product-subtitle">Incluye 4 controles mensuales, ajustes de menú semanales y contacto directo vía WhatsApp.</p>
+                        <p class="product-price">$80.000 CLP/pack</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <!-- Columna 1: Marca y Descripción -->
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-brand">
+                        <img src="assets/img/logo-nutrivida.png" alt="NutriVida" class="brand-logo">
+                    </a>
+                    <p class="footer-description">
+                        Clínica Nutricional enfocada en el bienestar integral y la salud preventiva.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlaces -->
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#contacto" class="footer-link">Contacto</a></li>
+                        <li><a href="#nosotros" class="footer-link">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Legal -->
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#privacidad" class="footer-link">Aviso de Privacidad</a></li>
+                        <li><a href="#terminos" class="footer-link">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Línea divisoria punteada -->
+            <hr class="footer-divider">
+
+            <!-- Columna Inferior: Copyright -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 NutriVida Clínica Nutricional. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

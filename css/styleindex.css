@@ -44,11 +44,43 @@
 
 
 /* ==========================================================================
+   Estructura Global del Layout (Sticky Footer)
+   ========================================================================== */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-neutral);
+  color: var(--color-text-main);
+  font-family: var(--font-family);
+}
+
+main {
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+#inicio,
+#servicios {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
    Sección Inicio
    ========================================================================== */
 
 #inicio {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-family);
   font-weight: 800;
 }
 
@@ -57,120 +89,167 @@
    ========================================================================== */
 
 .Bienvenida h1 {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 500;
-  color: #c423da;
+  font-family: var(--font-family);
+  font-weight: 800;
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .Bienvenida p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 100;
-  color: #2ca115;
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
+/* ==========================================================================
+   Sección Nuestros Servicios & Filtros
+   ========================================================================== */
 
+.Nuestros-servicios {
+  margin-bottom: 2rem;
+}
 
+.Nuestros-servicios h1 {
+  font-family: var(--font-family);
+  font-weight: 800;
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  margin: 0 0 0.8rem 0;
+}
 
+.Nuestros-servicios p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 700px;
+}
 
+.contenedor-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
 
+.btn-filtro {
+  padding: 0.65rem 1.4rem;
+  background-color: var(--color-white);
+  color: var(--color-text-main);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 9999px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
 
+.btn-filtro:hover {
+  background-color: #EAEBE6;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.btn-filtro.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(45, 90, 39, 0.25);
+}
 
 
 
 /* ==========================================================================
-   Sección Nuestros Servicios
+   cards de servicios
    ========================================================================== */
 
-.Nuestros-servicios {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 500;
-  color: #42493E;
+.card-service {
+  /* Fondo general (puede ser sobreescrito en el HTML) */
+  background-image: linear-gradient(180deg, rgba(48, 77, 35, 0.92) 0%, rgba(167, 94, 94, 0.4) 50%, rgba(46, 109, 70, 0.452) 100%),
+    url("../assets/img/plan-integral-mensual.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 28px;
+  width: 100%;
+  min-height: 380px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* Para que el texto quede abajo */
+  box-sizing: border-box;
+  text-decoration: none;
+  /* Importante para usar como <a> */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
-.Nuestros-servicios h1 {
-  font-family: 'Manrope', sans-serif;
+.card-service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+
+.contenedor-grid {
+  /* 1. Activamos Grid */
+  display: grid;
+
+  /* 2. Definimos las columnas (La parte importante) */
+  /* auto-fit: Crea tantas columnas como quepan.
+     minmax(280px, 1fr): Las tarjetas medirán mínimo 280px y máximo 1 fracción del espacio disponible. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  /* 3. Espacio entre las tarjetas (vertical y horizontal) */
+  gap: 24px;
+
+  /* Opcional: Centrar el contenedor en la pantalla si es muy grande */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.tag {
+  color: var(--color-neutral);
+  font-size: 12px;
   font-weight: 600;
-  color: #164212;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
 }
 
+.product-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-neutral);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.015em;
+}
 
+.product-subtitle {
+  font-size: 14px;
+  color: var(--color-white);
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.product-price {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-white);
+  margin: 0 0 20px 0;
+}
 
 
 
@@ -322,35 +401,10 @@
   transform: scale(0.98);
 }
 
-/* ==========================================================================
-   Botón Menú Hamburguesa (Mobile)
-   ========================================================================== */
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1100;
-}
-
-.hamburger span {
-  width: 100%;
-  height: 3px;
-  background-color: var(--color-primary);
-  border-radius: 3px;
-  transition: all 0.3s ease-in-out;
-}
 
 /* ==========================================================================
    Estilos Globales del Footer
    ========================================================================== */
-
 .footer {
   width: 100%;
   background-color: var(--color-footer-bg);
@@ -358,6 +412,7 @@
   padding: 3.5rem 2rem 2rem;
   color: var(--color-text-main);
   margin-top: auto;
+  flex-shrink: 0;
   box-sizing: border-box;
 }
 
@@ -460,87 +515,4 @@
   font-size: 0.88rem;
   margin: 0;
   font-weight: 400;
-}
-
-/* ==========================================================================
-   Diseño Responsivo (Mobile & Tablets < 768px)
-   ========================================================================== */
-
-@media (max-width: 768px) {
-  .nav {
-    padding: 1rem 1.5rem;
-  }
-
-  /* Navbar Móvil */
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-menu-wrapper {
-    position: absolute;
-    top: 100%;
-    left: -100%;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: var(--color-neutral);
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 2rem 1.5rem;
-    margin-left: 0;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
-    transition: left 0.35s ease;
-    display: flex;
-  }
-
-  .nav-menu-wrapper.active {
-    left: 0;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    gap: 1.2rem;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-actions {
-    flex-direction: column;
-    gap: 1.2rem;
-    width: 100%;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .nav-btn-register {
-    width: 100%;
-    max-width: 220px;
-  }
-
-  /* Animación Icono Hamburguesa */
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(8.5px) rotate(45deg);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-8.5px) rotate(-45deg);
-  }
-
-  /* Footer Móvil */
-  .footer {
-    padding: 2.5rem 1.5rem 1.5rem;
-  }
-
-  .footer-top {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .footer-description {
-    max-width: 100%;
-  }
 }
