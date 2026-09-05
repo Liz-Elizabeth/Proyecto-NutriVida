@@ -1,0 +1,70 @@
+{
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    // ---------- Apariencia ----------
+        "workbench.colorTheme": "Default Dark Modern",
+        "workbench.iconTheme": "vs-seti",
+        "window.titleBarStyle": "custom",
+        "window.commandCenter": true,
+        "workbench.activityBar.location": "top",
+        "breadcrumbs.enabled": false,
+        "editor.minimap.enabled": false,
+        "workbench.editor.showTabs": "single",
+        "workbench.editor.tabSizing": "shrink",
+        "workbench.tree.indent": 12,
+        "workbench.list.smoothScrolling": true,
+        "editor.smoothScrolling": true,
+        "editor.cursorSmoothCaretAnimation": "on",
+        "editor.cursorBlinking": "smooth",
+        "editor.renderLineHighlight": "gutter",
+        "editor.guides.indentation": false,
+        "editor.renderWhitespace": "none",
+        // ---------- Tipografía ----------
+        "editor.fontFamily": "'SF Mono', 'JetBrains Mono', Menlo, monospace",
+        "editor.fontLigatures": true,
+        "editor.fontSize": 13,
+        "editor.lineHeight": 22,
+        "editor.letterSpacing": 0.3,
+        "terminal.integrated.fontFamily": "'SF Mono', Menlo, monospace",
+        "terminal.integrated.fontSize": 12,
+        // ---------- Flujo de trabajo ----------
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+        "editor.bracketPairColorization.enabled": true,
+        "editor.linkedEditing": true,
+        "editor.suggestSelection": "first",
+        "editor.inlineSuggest.enabled": true,
+        "editor.occurrencesHighlight": "singleFile",
+        "files.autoSave": "onFocusChange",
+        "files.trimTrailingWhitespace": true,
+        "files.trimFinalNewlines": true,
+        // ---------- Explorador sin fricción ----------
+        "explorer.compactFolders": true,
+        "explorer.confirmDelete": false,
+        "explorer.confirmDragAndDrop": false,
+        // ---------- Git ----------
+        "git.enableSmartCommit": true,
+        "git.confirmSync": false,
+        "git.autofetch": true,
+
+        // ---------- Desarrollo Web ----------
+        "emmet.triggerExpansionOnTab": true,
+        "html.format.indentInnerHtml": true,
+        "html.format.wrapLineLength": 120,
+
+        // ---------- Live Server (Recomendado) ----------
+        "liveServer.settings.donotShowInfoMsg": true,
+
+        // ---------- Formateador (Recomendado: Prettier) ----------
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[json]": {
+            "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[javascript]": {
+            "editor.defaultFormatter": "vscode.typescript-language-features"
+        }
+    }

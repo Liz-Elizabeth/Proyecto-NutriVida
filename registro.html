@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriVida - Crear Cuenta</title>
+    <link rel="stylesheet" href="css/stylefuentes.css">
+    <link rel="stylesheet" href="css/styleindex.css">
+    <link rel="stylesheet" href="css/styleRegistroLogin.css">
+</head>
+
+<body>
+<header class="nav-header">
+    <nav class="nav">
+      <!-- Brand / Logo -->
+      <a href="index.html" class="nav-brand">
+        <img src="assets/img/logo-nutrivida.png" alt="NutriVida" class="brand-logo">
+      </a>
+
+      <!-- Navigation Links & Actions -->
+      <div class="nav-menu-wrapper" id="nav-menu-wrapper">
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="servicios.html" class="nav-link">Productos</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html" class="nav-login">Login</a>
+          <a href="registro.html" class="nav-btn-register">Registro</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+    <!-- Main Content -->
+    <main>
+        <section id="registro">
+            <div class="registro-container">
+                <div class="registro-header">
+                    <h1 class="registro-title">Crear Cuenta</h1>
+                    <p class="registro-subtitle">Completa tu ficha para comenzar tu plan nutricional</p>
+                </div>
+
+                <form id="registroForm" action="" novalidate>
+                    <!-- Nombre Completo -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Marcela González" autocomplete="name">
+                        <span class="error-text" id="nombre-error"></span>
+                    </div>
+
+                    <!-- Fila 1: RUT / Identificación y Fecha de Nacimiento -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rut">RUT / Identificación</label>
+                            <input type="text" id="rut" name="rut" placeholder="12.345.678-9">
+                            <span class="error-text" id="rut-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="dd-mm-aaaa">
+                            <span class="error-text" id="fechaNacimiento-error"></span>
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: Correo Electrónico y Teléfono (opcional) -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" autocomplete="email">
+                            <span class="error-text" id="email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono (opcional)</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" autocomplete="tel">
+                            <span class="error-text" id="telefono-error"></span>
+                        </div>
+                    </div>
+
+                    <!-- Objetivo Nutricional Principal -->
+                    <div class="form-group">
+                        <label for="objetivo">Objetivo Nutricional Principal</label>
+                        <select id="objetivo" name="objetivo">
+                            <option value="" disabled selected>Selecciona tu objetivo principal...</option>
+                            <option value="perdida-grasa">Pérdida de Grasa y Control de Peso</option>
+                            <option value="masa-muscular">Aumento de Masa Muscular</option>
+                            <option value="rendimiento-deportivo">Rendimiento Deportivo</option>
+                            <option value="salud-digestiva">Salud Digestiva y Gastrointestinal</option>
+                            <option value="nutricion-vegetariana">Nutrición Vegetariana o Vegana</option>
+                            <option value="reeducacion-alimentaria">Reeducación Alimentaria y Hábitos Saludables</option>
+                            <option value="control-patologias">Control de Patologías (Diabetes, Resistencia a la Insulina, Hipertensión)</option>
+                        </select>
+                        <span class="error-text" id="objetivo-error"></span>
+                    </div>
+
+                    <!-- Fila 3: Contraseña y Confirmar Contraseña -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" autocomplete="new-password">
+                            <span class="error-text" id="password-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar Contraseña</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repite tu contraseña" autocomplete="new-password">
+                            <span class="error-text" id="confirmPassword-error"></span>
+                        </div>
+                    </div>
+
+                    <!-- Aceptación de Términos y Privacidad -->
+                    <div class="form-checkbox-group">
+                        <label class="form-checkbox-label" for="terms">
+                            <input type="checkbox" id="terms" name="terms">
+                            <span>Acepto los <a href="terminos.html" target="_blank">Términos de Servicio</a> y el <a href="privacidad.html" target="_blank">Aviso de Privacidad</a></span>
+                        </label>
+                        <span class="error-text" id="terms-error"></span>
+                    </div>
+
+                    <!-- Alerta de Notificación Global -->
+                    <div id="registro-alert" class="login-alert" role="alert" aria-live="polite"></div>
+
+                    <!-- Botón de Envío -->
+                    <button type="submit" id="btn-registro">Crear Cuenta</button>
+                </form>
+
+                <!-- Enlace a Iniciar Sesión -->
+                <p class="login-register-link">
+                    ¿Ya tienes una cuenta registrada? <a href="login.html">Inicia sesión aquí</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <!-- Columna 1: Marca y Descripción -->
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-brand">
+                        <img src="assets/img/logo-nutrivida.png" alt="NutriVida" class="brand-logo">
+                    </a>
+                    <p class="footer-description">
+                        Clínica Nutricional enfocada en el bienestar integral y la salud preventiva.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlaces -->
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html#contacto" class="footer-link">Contacto</a></li>
+                        <li><a href="index.html#nosotros" class="footer-link">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Legal -->
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-nav">
+                        <li><a href="privacidad.html" class="footer-link">Aviso de Privacidad</a></li>
+                        <li><a href="terminos.html" class="footer-link">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Línea divisoria punteada -->
+            <hr class="footer-divider">
+
+            <!-- Columna Inferior: Copyright -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 NutriVida Clínica Nutricional. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/validacionRegistro.js"></script>
+</body>
+
+</html>
