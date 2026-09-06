@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<!--
+    =========================================================
+    NUTRIVIDA - REGISTRO DE USUARIO
+    Archivo: registro.html
+
+    Esta página permite que un usuario
+    ingrese sus datos para registrarse.
+
+    Las validaciones se realizarán
+    mediante el archivo js/registro.js.
+    =========================================================
+-->
+
+<html lang="es">
+
+<head>
+
+    <!--
+        UTF-8 permite utilizar correctamente:
+        ñ, tildes y otros caracteres.
+    -->
+    <meta charset="UTF-8">
+
+
+    <!--
+        viewport permite que el sitio
+        se adapte a celulares y tablets.
+    -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+    <!-- Título que aparece en la pestaña -->
+    <title>Registro - NutriVida</title>
+
+
+    <!--
+        Conectamos nuestra hoja de estilos externa.
+    -->
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ENCABEZADO
+         ===================================================== -->
+
+    <header>
+
+        <div class="contenedor encabezado">
+
+
+            <!-- LOGO -->
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <img
+                    src="assets/img/logo-nutrivida.png"
+                    alt="Logo NutriVida"
+                >
+
+            </a>
+
+
+            <!-- =================================================
+                 MENÚ DE NAVEGACIÓN
+
+                 nav es una etiqueta semántica.
+                 Indica que este contenido corresponde
+                 a la navegación del sitio.
+                 ================================================= -->
+
+            <nav class="menu">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="servicios.html">
+                    Servicios
+                </a>
+
+                <a href="index.html#nosotros">
+                    Nosotros
+                </a>
+
+                <a href="index.html#especialidades">
+                    Especialidades
+                </a>
+
+                <a href="index.html#profesionales">
+                    Profesionales
+                </a>
+
+                <a href="index.html#contacto">
+                    Contacto
+                </a>
+
+            </nav>
+
+
+            <!-- BOTONES DE ACCESO -->
+            <div class="acceso">
+
+                <a
+                    href="login.html"
+                    class="boton-login"
+                >
+                    Iniciar sesión
+                </a>
+
+
+                <a
+                    href="registro.html"
+                    class="boton-registro"
+                >
+                    Registrarse
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+
+         main es una etiqueta semántica.
+         Representa el contenido principal de esta página.
+         ===================================================== -->
+
+    <main class="pagina-acceso">
+
+
+        <!-- =================================================
+             TARJETA DE REGISTRO
+             ================================================= -->
+
+        <section class="tarjeta-acceso">
+
+
+            <!-- =================================================
+                 PARTE IZQUIERDA
+
+                 Contiene el logo y un pequeño mensaje.
+                 ================================================= -->
+
+            <div class="lado-acceso">
+
+
+                <img
+                    src="assets/img/logo-nutrivida.png"
+                    alt="Logo Clínica NutriVida"
+                >
+
+
+                <h1>
+                    Crea tu cuenta
+                </h1>
+
+
+                <p>
+                    Regístrate para acceder a los servicios
+                    de NutriVida.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PARTE DERECHA
+                 FORMULARIO DE REGISTRO
+                 ================================================= -->
+
+            <div class="formulario-acceso">
+
+
+                <h2>
+                    Registro de usuario
+                </h2>
+
+
+                <p>
+                    Completa tus datos para crear una cuenta.
+                </p>
+
+
+
+                <!-- =================================================
+                     FORMULARIO
+
+                     El ID "formularioRegistro" es importante.
+
+                     JavaScript utilizará este ID para detectar
+                     cuando el usuario presione Registrarse.
+                     ================================================= -->
+
+                <form id="formularioRegistro">
+
+
+
+                    <!-- =============================================
+                         RUN
+                         ============================================= -->
+
+                    <label for="runRegistro">
+                        RUN
+                    </label>
+
+
+                    <!--
+                        La pauta solicita RUN sin puntos ni guion.
+
+                        maxlength="9" limita visualmente la cantidad
+                        máxima de caracteres que se pueden escribir.
+
+                        IMPORTANTE:
+                        JavaScript igualmente realizará la validación.
+                    -->
+                    <input
+                        type="text"
+                        id="runRegistro"
+                        maxlength="9"
+                        placeholder="Ejemplo: 19011022K"
+                    >
+
+
+                    <small>
+                        Ingresa tu RUN sin puntos ni guion.
+                    </small>
+
+
+
+                    <!-- =============================================
+                         FILA: NOMBRE + APELLIDOS
+                         ============================================= -->
+
+                    <div class="fila-formulario">
+
+
+                        <!-- NOMBRE -->
+                        <div class="campo-formulario">
+
+                            <label for="nombreRegistro">
+                                Nombre
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="nombreRegistro"
+                                maxlength="50"
+                                placeholder="Ingresa tu nombre"
+                            >
+
+                        </div>
+
+
+
+                        <!-- APELLIDOS -->
+                        <div class="campo-formulario">
+
+                            <label for="apellidoRegistro">
+                                Apellidos
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="apellidoRegistro"
+                                maxlength="100"
+                                placeholder="Ingresa tus apellidos"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =============================================
+                         CORREO ELECTRÓNICO
+                         ============================================= -->
+
+                    <label for="correoRegistro">
+                        Correo electrónico
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="correoRegistro"
+                        maxlength="100"
+                        placeholder="ejemplo@gmail.com"
+                    >
+
+
+                    <small>
+                        Se permiten correos Gmail, Duoc
+                        y Profesor Duoc.
+                    </small>
+
+
+
+                    <!-- =============================================
+                         FECHA DE NACIMIENTO
+                         ============================================= -->
+
+                    <label for="fechaNacimiento">
+                        Fecha de nacimiento
+                    </label>
+
+
+                    <!--
+                        type="date" muestra un selector
+                        de fecha proporcionado por el navegador.
+
+                        Según la pauta específica,
+                        este dato es opcional.
+                    -->
+                    <input
+                        type="date"
+                        id="fechaNacimiento"
+                    >
+
+
+                    <small>
+                        Este dato es opcional.
+                    </small>
+
+
+
+                    <!-- =============================================
+                         FILA: REGIÓN + COMUNA
+                         ============================================= -->
+
+                    <div class="fila-formulario">
+
+
+                        <!-- REGIÓN -->
+                        <div class="campo-formulario">
+
+                            <label for="regionRegistro">
+                                Región
+                            </label>
+
+
+                            <!--
+                                select crea un menú desplegable.
+
+                                Las regiones serán agregadas
+                                desde registro.js utilizando
+                                un arreglo de JavaScript.
+                            -->
+                            <select id="regionRegistro">
+
+                                <option value="">
+                                    Selecciona una región
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- COMUNA -->
+                        <div class="campo-formulario">
+
+                            <label for="comunaRegistro">
+                                Comuna
+                            </label>
+
+
+                            <!--
+                                Las comunas cambiarán dependiendo
+                                de la región seleccionada.
+                            -->
+                            <select id="comunaRegistro">
+
+                                <option value="">
+                                    Primero selecciona una región
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <!-- =============================================
+                    OBJETIVO NUTRICIONAL PRINCIPAL
+                    ============================================= -->
+
+                <!--
+                    Este select permite que el usuario indique
+                    cuál es su principal objetivo nutricional.
+
+                    El atributo id="objetivoRegistro"
+                    será utilizado posteriormente desde JavaScript
+                    para realizar la validación.
+                -->
+
+                <label for="objetivoRegistro">
+                    Objetivo Nutricional Principal
+                </label>
+
+
+                <select id="objetivoRegistro">
+
+                    <!--
+                        Esta primera opción no representa
+                        una selección válida.
+                    -->
+                    <option value="">
+                        Selecciona tu objetivo principal...
+                    </option>
+
+
+                    <option value="perdida-grasa">
+                        Pérdida de Grasa y Control de Peso
+                    </option>
+
+
+                    <option value="masa-muscular">
+                        Aumento de Masa Muscular
+                    </option>
+
+
+                    <option value="rendimiento-deportivo">
+                        Rendimiento Deportivo
+                    </option>
+
+
+                    <option value="salud-digestiva">
+                        Salud Digestiva y Gastrointestinal
+                    </option>
+
+
+                    <option value="nutricion-vegetariana">
+                        Nutrición Vegetariana o Vegana
+                    </option>
+
+
+                    <option value="reeducacion-alimentaria">
+                        Reeducación Alimentaria y Hábitos Saludables
+                    </option>
+
+
+                    <option value="control-patologias">
+                        Control de Patologías
+                    </option>
+
+                </select>
+
+
+                <small>
+                    Selecciona el objetivo que mejor represente
+                    lo que deseas trabajar con el nutricionista.
+                </small>
+
+                    <!-- =============================================
+                         DIRECCIÓN
+                         ============================================= -->
+
+                    <label for="direccionRegistro">
+                        Dirección
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="direccionRegistro"
+                        maxlength="300"
+                        placeholder="Ingresa tu dirección"
+                    >
+
+
+
+                    <!-- =============================================
+                         FILA: CONTRASEÑAS
+                         ============================================= -->
+
+                    <div class="fila-formulario">
+
+
+                        <!-- CONTRASEÑA -->
+                        <div class="campo-formulario">
+
+                            <label for="passwordRegistro">
+                                Contraseña
+                            </label>
+
+
+                            <!--
+                                type="password" oculta visualmente
+                                los caracteres escritos.
+                            -->
+                            <input
+                                type="password"
+                                id="passwordRegistro"
+                                maxlength="10"
+                                placeholder="Entre 4 y 10 caracteres"
+                            >
+
+                        </div>
+
+
+
+                        <!-- CONFIRMAR CONTRASEÑA -->
+                        <div class="campo-formulario">
+
+                            <label for="confirmarPassword">
+                                Confirmar contraseña
+                            </label>
+
+
+                            <input
+                                type="password"
+                                id="confirmarPassword"
+                                maxlength="10"
+                                placeholder="Repite tu contraseña"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =============================================
+                         BOTÓN REGISTRARSE
+                         ============================================= -->
+
+                    <!--
+                        type="submit" intenta enviar el formulario.
+
+                        Nuestro JavaScript escuchará este evento
+                        y realizará primero todas las validaciones.
+                    -->
+                    <button type="submit">
+                        Registrarse
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- =================================================
+                     ENLACES INFERIORES
+                     ================================================= -->
+
+                <p>
+                    ¿Ya tienes una cuenta?
+
+                    <a href="login.html">
+                        Inicia sesión
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="index.html">
+                        Volver al inicio
+                    </a>
+                </p>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+
+         footer es una etiqueta semántica que representa
+         el pie de página del sitio.
+         ===================================================== -->
+
+    <footer>
+
+
+        <div class="contenedor footer-contenido">
+
+
+            <!-- Información de NutriVida -->
+            <div>
+
+                <img
+                    src="assets/img/logo-nutrivida.png"
+                    alt="Logo NutriVida"
+                >
+
+
+                <p>
+                    Clínica Nutricional NutriVida
+                </p>
+
+            </div>
+
+
+
+            <!-- Ubicación -->
+            <div>
+
+                <h3>
+                    NutriVida
+                </h3>
+
+
+                <p>
+                    Temuco, Región de La Araucanía
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Parte final del footer -->
+        <div class="footer-final">
+
+            <p>
+                © 2026 NutriVida - Proyecto académico
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+
+         Conectamos registro.js AL FINAL del body.
+
+         Esto permite que primero cargue el HTML
+         y después JavaScript busque los elementos
+         mediante document.getElementById().
+         ===================================================== -->
+
+    <script src="js/registro.js"></script>
+
+
+</body>
+
+</html>

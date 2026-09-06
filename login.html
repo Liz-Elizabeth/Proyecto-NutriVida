@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<!-- =========================================================
+     NUTRIVIDA - LOGIN.HTML
+
+     Página para iniciar sesión.
+
+     Contiene:
+     - Logo de NutriVida
+     - Correo electrónico
+     - Contraseña
+     - Botón para iniciar sesión
+     - Enlace hacia registro
+     - Enlace hacia inicio
+
+     El formulario será validado mediante:
+     js/login.js
+     ========================================================= -->
+
+<html lang="es">
+
+<head>
+
+    <!-- Permite utilizar tildes y caracteres especiales -->
+    <meta charset="UTF-8">
+
+
+    <!-- Permite adaptar la página a celulares y tablets -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Título de la pestaña -->
+    <title>Iniciar Sesión - NutriVida</title>
+
+
+    <!-- Archivo CSS externo -->
+    <link rel="stylesheet"
+          href="css/styles.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ENCABEZADO
+     ========================================================= -->
+
+<header>
+
+    <div class="contenedor encabezado">
+
+
+        <!-- Logo -->
+
+        <a href="index.html"
+           class="logo">
+
+            <img src="assets/img/logo-nutrivida.png"
+                 alt="Logo NutriVida">
+
+        </a>
+
+
+        <!-- Menú -->
+
+        <nav class="menu">
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="servicios.html">
+                Servicios
+            </a>
+
+            <a href="index.html#nosotros">
+                Nosotros
+            </a>
+
+            <a href="index.html#profesionales">
+                Profesionales
+            </a>
+
+            <a href="index.html#contacto">
+                Contacto
+            </a>
+
+        </nav>
+
+
+        <!-- Acceso -->
+
+        <div class="acceso">
+
+            <a href="login.html"
+               class="boton-login">
+                Iniciar sesión
+            </a>
+
+            <a href="registro.html"
+               class="boton-registro">
+                Registrarse
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     CONTENIDO PRINCIPAL
+     ========================================================= -->
+
+<main class="pagina-acceso">
+
+
+    <!-- Tarjeta principal -->
+
+    <section class="tarjeta-acceso">
+
+
+        <!-- =================================================
+             LADO IZQUIERDO
+             Información visual de NutriVida
+             ================================================= -->
+
+        <div class="lado-acceso">
+
+
+            <!-- Usamos el logo correcto de NutriVida -->
+
+            <img src="assets/img/logo-nutrivida.png"
+                 alt="Logo de la clínica NutriVida"
+                 class="logo-acceso">
+
+
+            <h2>
+                Bienvenido a NutriVida
+            </h2>
+
+
+            <p>
+
+                Accede a tu cuenta para continuar utilizando
+                los servicios disponibles en nuestra plataforma.
+
+            </p>
+
+
+            <p class="texto-acceso-secundario">
+
+                Nutrición, acompañamiento y bienestar
+                en un solo lugar.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             LADO DERECHO
+             Formulario
+             ================================================= -->
+
+        <div class="formulario-acceso">
+
+
+            <p class="etiqueta">
+                ACCESO DE USUARIO
+            </p>
+
+
+            <h1>
+                Iniciar Sesión
+            </h1>
+
+
+            <p class="descripcion-formulario">
+
+                Ingresa tu correo electrónico y contraseña.
+
+            </p>
+
+
+
+            <!--
+                El ID formularioLogin será utilizado
+                posteriormente por login.js
+            -->
+
+            <form id="formularioLogin"
+                  class="formulario">
+
+
+                <!-- Correo -->
+
+                <label for="correoLogin">
+                    Correo electrónico
+                </label>
+
+
+                <!--
+                    login.js buscará este elemento
+                    mediante el ID correoLogin
+                -->
+
+                <input type="email"
+                       id="correoLogin"
+                       placeholder="ejemplo@correo.cl">
+
+
+
+                <!-- Contraseña -->
+
+                <label for="passwordLogin">
+                    Contraseña
+                </label>
+
+
+                <!--
+                    login.js buscará este elemento
+                    mediante el ID passwordLogin
+                -->
+
+                <input type="password"
+                       id="passwordLogin"
+                       placeholder="Ingresa tu contraseña">
+
+
+
+                <!-- Botón -->
+
+                <button type="submit">
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+
+
+            <!-- Enlace hacia registro -->
+
+            <p class="enlace-formulario">
+
+                ¿Aún no tienes una cuenta?
+
+                <a href="registro.html">
+                    Crear cuenta
+                </a>
+
+            </p>
+
+
+
+            <!-- Volver al inicio -->
+
+            <a href="index.html"
+               class="volver">
+
+                Volver al inicio
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+
+     Este archivo valida:
+     - correo vacío
+     - formato del correo
+     - contraseña vacía
+     - longitud de contraseña
+     ========================================================= -->
+
+<script src="js/login.js"></script>
+
+
+</body>
+
+</html>

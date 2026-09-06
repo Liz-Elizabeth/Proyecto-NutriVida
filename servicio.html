@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+
+<!-- =========================================================
+     NUTRIVIDA - SERVICIO.HTML
+
+     Página de detalle de los servicios.
+
+     Cada servicio muestra:
+     - Imagen
+     - Nombre
+     - Descripción
+     - Precio
+     - Qué incluye
+     - Profesional especialista
+     - Información adicional mediante JavaScript
+     ========================================================= -->
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Detalle de Servicios - NutriVida</title>
+
+    <link rel="stylesheet"
+          href="css/styles.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ENCABEZADO
+     ========================================================= -->
+
+<header>
+
+    <div class="contenedor encabezado">
+
+        <!-- Logo -->
+
+        <a href="index.html"
+           class="logo">
+
+            <img src="assets/img/logo-nutrivida.png"
+                 alt="Logo NutriVida">
+
+        </a>
+
+
+        <!-- Menú -->
+
+        <nav class="menu">
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="servicios.html">
+                Servicios
+            </a>
+
+            <a href="index.html#nosotros">
+                Nosotros
+            </a>
+
+            <a href="index.html#especialidades">
+                Especialidades
+            </a>
+
+            <a href="index.html#profesionales">
+                Profesionales
+            </a>
+
+            <a href="index.html#contacto">
+                Contacto
+            </a>
+
+        </nav>
+
+
+        <!-- Acceso -->
+
+        <div class="acceso">
+
+            <a href="login.html"
+               class="boton-login">
+
+                Iniciar sesión
+
+            </a>
+
+            <a href="registro.html"
+               class="boton-registro">
+
+                Registrarse
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     CONTENIDO PRINCIPAL
+     ========================================================= -->
+
+<main>
+
+
+    <!-- =====================================================
+         PORTADA
+         ===================================================== -->
+
+    <section class="portada-interna">
+
+        <div class="contenedor">
+
+            <p class="etiqueta">
+                SERVICIOS NUTRICIONALES
+            </p>
+
+            <h1>
+                Detalle de nuestros servicios
+            </h1>
+
+            <p>
+                Conoce qué incluye cada alternativa y los
+                profesionales que pueden acompañarte.
+            </p>
+
+            <a href="servicios.html"
+               class="boton-secundario">
+
+                Volver a Servicios
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         1. PLAN INTEGRAL MENSUAL
+         ===================================================== -->
+
+    <section class="seccion detalle-servicio"
+             id="plan-integral">
+
+        <div class="contenedor detalle-contenido">
+
+
+            <!-- Imagen -->
+
+            <div class="imagen-servicio">
+
+                <img src="assets/img/plan-integral-mensual.jpg"
+                     alt="Plan Integral Mensual">
+
+            </div>
+
+
+            <!-- Información -->
+
+            <div class="informacion-servicio">
+
+                <p class="etiqueta">
+                    PLAN COMPLETO
+                </p>
+
+                <h2>
+                    Plan Integral Mensual
+                </h2>
+
+                <p>
+                    Servicio pensado para personas que desean
+                    comenzar un proceso nutricional con
+                    evaluación, planificación y seguimiento.
+                </p>
+
+
+                <h3>
+                    ¿Qué incluye?
+                </h3>
+
+                <ul class="lista-detalle">
+
+                    <li>
+                        Evaluación nutricional inicial.
+                    </li>
+
+                    <li>
+                        Plan alimentario personalizado.
+                    </li>
+
+                    <li>
+                        Definición de objetivos.
+                    </li>
+
+                    <li>
+                        Seguimiento durante el mes.
+                    </li>
+
+                    <li>
+                        Ajustes según evolución.
+                    </li>
+
+                </ul>
+
+
+                <!-- Profesionales -->
+
+                <h3>
+                    Profesionales
+                </h3>
+
+
+                <div class="profesionales-detalle">
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-camila-soto.png"
+                             alt="Camila Soto">
+
+                        <div>
+
+                            <h4>
+                                Camila Soto
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Clínica y Control de Peso
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-valentina-munoz.png"
+                             alt="Valentina Muñoz">
+
+                        <div>
+
+                            <h4>
+                                Valentina Muñoz
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Vegetariana y Vegana
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Precio -->
+
+                <p class="precio-grande">
+                    $35.000
+                </p>
+
+
+                <!-- Botón controlado con JavaScript -->
+
+                <button type="button"
+                        id="botonIntegral">
+
+                    Ver más información
+
+                </button>
+
+
+                <!-- Información que comienza oculta -->
+
+                <div id="extraIntegral"
+                     class="informacion-extra">
+
+                    <h3>
+                        Información adicional
+                    </h3>
+
+                    <p>
+                        Este plan ofrece mayor acompañamiento
+                        que una consulta individual, ya que
+                        incluye seguimiento y ajustes durante
+                        el proceso.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         2. CONSULTA NUTRICIONAL INICIAL
+         ===================================================== -->
+
+    <section class="seccion detalle-servicio detalle-alterno"
+             id="consulta-inicial">
+
+        <div class="contenedor detalle-contenido">
+
+
+            <div class="imagen-servicio">
+
+                <img src="assets/img/consulta-nutricional.jpg"
+                     alt="Consulta Nutricional">
+
+            </div>
+
+
+            <div class="informacion-servicio">
+
+                <p class="etiqueta">
+                    PRIMERA ATENCIÓN
+                </p>
+
+                <h2>
+                    Consulta Nutricional Inicial
+                </h2>
+
+                <p>
+                    Primera evaluación destinada a conocer
+                    hábitos, antecedentes y objetivos del
+                    paciente.
+                </p>
+
+
+                <h3>
+                    ¿Qué incluye?
+                </h3>
+
+                <ul class="lista-detalle">
+
+                    <li>
+                        Entrevista nutricional.
+                    </li>
+
+                    <li>
+                        Revisión de hábitos alimentarios.
+                    </li>
+
+                    <li>
+                        Registro de antecedentes.
+                    </li>
+
+                    <li>
+                        Definición de objetivos.
+                    </li>
+
+                    <li>
+                        Orientación inicial.
+                    </li>
+
+                </ul>
+
+
+                <h3>
+                    Profesionales
+                </h3>
+
+
+                <div class="profesionales-detalle">
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-camila-soto.png"
+                             alt="Camila Soto">
+
+                        <div>
+
+                            <h4>
+                                Camila Soto
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Clínica
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-felipe-herrera.png"
+                             alt="Felipe Herrera">
+
+                        <div>
+
+                            <h4>
+                                Felipe Herrera
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Clínica y Metabólica
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <p class="precio-grande">
+                    $20.000
+                </p>
+
+
+                <button type="button"
+                        id="botonConsulta">
+
+                    Ver más información
+
+                </button>
+
+
+                <div id="extraConsulta"
+                     class="informacion-extra">
+
+                    <h3>
+                        Información adicional
+                    </h3>
+
+                    <p>
+                        Esta consulta es ideal para comenzar.
+                        Después de la evaluación, el profesional
+                        puede orientar al paciente hacia un
+                        plan específico.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         3. PLAN CONTROL DE PESO
+         ===================================================== -->
+
+    <section class="seccion detalle-servicio"
+             id="control-peso">
+
+        <div class="contenedor detalle-contenido">
+
+
+            <div class="imagen-servicio">
+
+                <img src="assets/img/habitos-saludables.png"
+                     alt="Plan Control de Peso">
+
+            </div>
+
+
+            <div class="informacion-servicio">
+
+                <p class="etiqueta">
+                    HÁBITOS Y OBJETIVOS
+                </p>
+
+                <h2>
+                    Plan Control de Peso
+                </h2>
+
+                <p>
+                    Plan orientado a trabajar objetivos
+                    relacionados con el peso y mejorar
+                    hábitos alimentarios.
+                </p>
+
+
+                <h3>
+                    ¿Qué incluye?
+                </h3>
+
+                <ul class="lista-detalle">
+
+                    <li>
+                        Evaluación nutricional.
+                    </li>
+
+                    <li>
+                        Registro de mediciones.
+                    </li>
+
+                    <li>
+                        Plan alimentario personalizado.
+                    </li>
+
+                    <li>
+                        Definición de metas.
+                    </li>
+
+                    <li>
+                        Control de progreso.
+                    </li>
+
+                </ul>
+
+
+                <h3>
+                    Profesionales
+                </h3>
+
+
+                <div class="profesionales-detalle">
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-camila-soto.png"
+                             alt="Camila Soto">
+
+                        <div>
+
+                            <h4>
+                                Camila Soto
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Control de Peso
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-felipe-herrera.png"
+                             alt="Felipe Herrera">
+
+                        <div>
+
+                            <h4>
+                                Felipe Herrera
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Metabólica
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <p class="precio-grande">
+                    $29.000
+                </p>
+
+
+                <button type="button"
+                        id="botonPeso">
+
+                    Ver más información
+
+                </button>
+
+
+                <div id="extraPeso"
+                     class="informacion-extra">
+
+                    <h3>
+                        Información adicional
+                    </h3>
+
+                    <p>
+                        El objetivo es realizar cambios
+                        progresivos en la alimentación y
+                        revisar la evolución del paciente
+                        durante los controles.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         4. PLAN NUTRICIÓN DEPORTIVA
+         ===================================================== -->
+
+    <section class="seccion detalle-servicio detalle-alterno"
+             id="nutricion-deportiva">
+
+        <div class="contenedor detalle-contenido">
+
+
+            <div class="imagen-servicio">
+
+                 <img src="assets/img/plan-nutricion-deportiva.png"
+                      alt="Plan Nutrición Deportiva">
+
+            </div>
+
+
+            <div class="informacion-servicio">
+
+                <p class="etiqueta">
+                    ACTIVIDAD FÍSICA
+                </p>
+
+                <h2>
+                    Plan Nutrición Deportiva
+                </h2>
+
+                <p>
+                    Servicio especializado para personas que
+                    realizan actividad física y desean organizar
+                    su alimentación según sus entrenamientos.
+                </p>
+
+
+                <h3>
+                    ¿Qué incluye?
+                </h3>
+
+                <ul class="lista-detalle">
+
+                    <li>
+                        Evaluación nutricional.
+                    </li>
+
+                    <li>
+                        Revisión de actividad física.
+                    </li>
+
+                    <li>
+                        Planificación alimentaria.
+                    </li>
+
+                    <li>
+                        Orientación pre y post ejercicio.
+                    </li>
+
+                    <li>
+                        Seguimiento de objetivos.
+                    </li>
+
+                </ul>
+
+
+                <h3>
+                    Profesional especialista
+                </h3>
+
+
+                <div class="profesionales-detalle">
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-daniela-rojas.png"
+                             alt="Daniela Rojas">
+
+                        <div>
+
+                            <h4>
+                                Daniela Rojas
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Deportiva
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <p class="precio-grande">
+                    $32.000
+                </p>
+
+
+                <button type="button"
+                        id="botonDeportiva">
+
+                    Ver más información
+
+                </button>
+
+
+                <div id="extraDeportiva"
+                     class="informacion-extra">
+
+                    <h3>
+                        Información adicional
+                    </h3>
+
+                    <p>
+                        El plan considera el tipo de actividad,
+                        frecuencia de entrenamiento y objetivos
+                        de cada persona.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         5. PLAN VEGETARIANO Y VEGANO
+         ===================================================== -->
+
+    <section class="seccion detalle-servicio"
+             id="vegetariano-vegano">
+
+        <div class="contenedor detalle-contenido">
+
+
+            <div class="imagen-servicio">
+
+               <img src="assets/img/plan-vegetariano-vegano.png"
+                    alt="Plan Vegetariano y Vegano">
+
+            </div>
+
+
+            <div class="informacion-servicio">
+
+                <p class="etiqueta">
+                    ALIMENTACIÓN BASADA EN PLANTAS
+                </p>
+
+                <h2>
+                    Plan Vegetariano y Vegano
+                </h2>
+
+                <p>
+                    Orientación para personas que siguen o
+                    desean comenzar una alimentación
+                    vegetariana o vegana.
+                </p>
+
+
+                <h3>
+                    ¿Qué incluye?
+                </h3>
+
+                <ul class="lista-detalle">
+
+                    <li>
+                        Evaluación alimentaria.
+                    </li>
+
+                    <li>
+                        Revisión de hábitos.
+                    </li>
+
+                    <li>
+                        Planificación personalizada.
+                    </li>
+
+                    <li>
+                        Educación alimentaria.
+                    </li>
+
+                    <li>
+                        Seguimiento.
+                    </li>
+
+                </ul>
+
+
+                <h3>
+                    Profesional especialista
+                </h3>
+
+
+                <div class="profesionales-detalle">
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-valentina-munoz.png"
+                             alt="Valentina Muñoz">
+
+                        <div>
+
+                            <h4>
+                                Valentina Muñoz
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Vegetariana y Vegana
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <p class="precio-grande">
+                    $30.000
+                </p>
+
+
+                <button type="button"
+                        id="botonVegetariano">
+
+                    Ver más información
+
+                </button>
+
+
+                <div id="extraVegetariano"
+                     class="informacion-extra">
+
+                    <h3>
+                        Información adicional
+                    </h3>
+
+                    <p>
+                        La planificación considera las
+                        preferencias alimentarias y necesidades
+                        individuales de cada paciente.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         6. PACK DE SEGUIMIENTO
+         ===================================================== -->
+
+    <section class="seccion detalle-servicio detalle-alterno"
+             id="seguimiento">
+
+        <div class="contenedor detalle-contenido">
+
+
+            <div class="imagen-servicio">
+
+                <img src="assets/img/pack-seguimiento.png"
+                     alt="Pack de Seguimiento"> 
+            </div>
+
+
+            <div class="informacion-servicio">
+
+                <p class="etiqueta">
+                    CONTINUIDAD
+                </p>
+
+                <h2>
+                    Pack de Seguimiento
+                </h2>
+
+                <p>
+                    Servicio para pacientes que ya realizaron
+                    una evaluación inicial y necesitan revisar
+                    su evolución.
+                </p>
+
+
+                <h3>
+                    ¿Qué incluye?
+                </h3>
+
+                <ul class="lista-detalle">
+
+                    <li>
+                        Control de progreso.
+                    </li>
+
+                    <li>
+                        Revisión de objetivos.
+                    </li>
+
+                    <li>
+                        Revisión de mediciones.
+                    </li>
+
+                    <li>
+                        Ajustes del plan.
+                    </li>
+
+                    <li>
+                        Nuevas recomendaciones.
+                    </li>
+
+                </ul>
+
+
+                <h3>
+                    Profesionales
+                </h3>
+
+
+                <div class="profesionales-detalle">
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-camila-soto.png"
+                             alt="Camila Soto">
+
+                        <div>
+
+                            <h4>
+                                Camila Soto
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Clínica
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="profesional-detalle">
+
+                        <img src="assets/img/nutricionista-valentina-munoz.png"
+                             alt="Valentina Muñoz">
+
+                        <div>
+
+                            <h4>
+                                Valentina Muñoz
+                            </h4>
+
+                            <p class="especialidad-profesional">
+                                Nutrición Vegetariana y Vegana
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <p class="precio-grande">
+                    $24.000
+                </p>
+
+
+                <button type="button"
+                        id="botonSeguimiento">
+
+                    Ver más información
+
+                </button>
+
+
+                <div id="extraSeguimiento"
+                     class="informacion-extra">
+
+                    <h3>
+                        Información adicional
+                    </h3>
+
+                    <p>
+                        Este servicio cuesta menos porque
+                        está dirigido a pacientes que ya
+                        cuentan con una evaluación y un plan
+                        previo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Botón final -->
+
+    <section class="seccion-final-servicio">
+
+        <div class="contenedor centrar">
+
+            <a href="servicios.html"
+               class="boton-secundario">
+
+                Volver a Servicios
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     PIE DE PÁGINA
+     ========================================================= -->
+
+<footer>
+
+    <div class="contenedor footer-contenido">
+
+
+        <div class="footer-marca">
+
+            <img src="assets/img/logo-nutrivida.png"
+                 alt="Logo NutriVida">
+
+            <p>
+                Clínica nutricional dedicada a entregar
+                orientación y acompañamiento profesional.
+            </p>
+
+            <p>
+                Temuco, Región de La Araucanía
+            </p>
+
+        </div>
+
+
+        <div class="footer-columna">
+
+            <h3>
+                NutriVida
+            </h3>
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="index.html#nosotros">
+                Nosotros
+            </a>
+
+            <a href="index.html#profesionales">
+                Profesionales
+            </a>
+
+        </div>
+
+
+        <div class="footer-columna">
+
+            <h3>
+                Servicios
+            </h3>
+
+            <a href="servicios.html">
+                Nuestros servicios
+            </a>
+
+            <a href="#consulta-inicial">
+                Consulta inicial
+            </a>
+
+            <a href="#seguimiento">
+                Seguimiento
+            </a>
+
+        </div>
+
+
+        <div class="footer-columna">
+
+            <h3>
+                Acceso
+            </h3>
+
+            <a href="login.html">
+                Iniciar sesión
+            </a>
+
+            <a href="registro.html">
+                Registrarse
+            </a>
+
+            <a href="index.html#contacto">
+                Contacto
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-final">
+
+        <p>
+            © 2026 NutriVida - Proyecto académico
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+
+     servicio.js controla los botones
+     "Ver más información".
+     ========================================================= -->
+
+<script src="js/servicio.js"></script>
+
+
+</body>
+
+</html>

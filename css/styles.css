@@ -1,0 +1,2047 @@
+/* =========================================================
+   NUTRIVIDA - HOJA DE ESTILOS PRINCIPAL
+   Archivo: css/styles.css
+
+   Esta hoja controla el diseño de todas las páginas:
+   - index.html
+   - servicios.html
+   - servicio.html
+   - login.html
+   - registro.html
+
+   IMPORTANTE:
+   Desde CSS usamos ../assets porque styles.css
+   está dentro de la carpeta css.
+   ========================================================= */
+
+
+/* =========================================================
+   1. CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+/*
+   El asterisco (*) selecciona TODOS los elementos.
+
+   box-sizing: border-box hace que el padding y el borde
+   se consideren dentro del ancho total del elemento.
+*/
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+   body representa todo el contenido visible de la página.
+*/
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f5f8f3;
+
+    color: #253123;
+
+    line-height: 1.6;
+}
+
+
+/*
+   Quitamos el margen superior automático
+   de algunos títulos.
+*/
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+}
+
+
+/*
+   Diseño general de los enlaces.
+*/
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/*
+   Evita que una imagen sea más grande
+   que el espacio disponible.
+*/
+img {
+    max-width: 100%;
+
+    display: block;
+}
+
+
+/*
+   Este contenedor mantiene el contenido centrado
+   y evita que ocupe toda la pantalla.
+*/
+.contenedor {
+    width: 90%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   2. ENCABEZADO
+   ========================================================= */
+
+header {
+    background-color: #1f4d2b;
+
+    color: white;
+}
+
+
+/*
+   display:flex coloca logo, menú y botones
+   uno al lado del otro.
+*/
+.encabezado {
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   3. LOGO
+   ========================================================= */
+
+.logo img {
+    height: 48px;
+
+    width: auto;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    padding: 3px 8px;
+}
+
+
+/* =========================================================
+   4. MENÚ DE NAVEGACIÓN
+   ========================================================= */
+
+.menu {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.menu a {
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/*
+   :hover se aplica cuando el mouse
+   pasa sobre el elemento.
+*/
+.menu a:hover {
+    color: #c9e7b8;
+}
+
+
+/* =========================================================
+   5. BOTONES DE ACCESO DEL MENÚ
+   ========================================================= */
+
+.acceso {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.boton-login,
+.boton-registro {
+    padding: 9px 13px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.boton-login {
+    color: white;
+
+    border: 1px solid white;
+}
+
+
+.boton-registro {
+    background-color: white;
+
+    color: #1f4d2b;
+}
+
+
+/* =========================================================
+   6. BOTONES GENERALES
+   ========================================================= */
+
+.boton-principal,
+.boton-secundario {
+    display: inline-block;
+
+    padding: 11px 19px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.boton-principal {
+    background-color: #1f4d2b;
+
+    color: white;
+}
+
+
+.boton-principal:hover {
+    background-color: #2f663c;
+}
+
+
+.boton-secundario {
+    background-color: white;
+
+    color: #1f4d2b;
+
+    border: 1px solid #1f4d2b;
+}
+
+
+.boton-secundario:hover {
+    background-color: #edf5e9;
+}
+
+
+/* =========================================================
+   7. HERO - PARTE PRINCIPAL DEL INDEX
+   ========================================================= */
+
+.hero {
+    /*
+       Esta imagen está en assets/img.
+
+       Como CSS está dentro de css/,
+       utilizamos ../ para volver a la raíz.
+    */
+    background-image:
+        linear-gradient(
+            rgba(245, 248, 243, 0.90),
+            rgba(245, 248, 243, 0.90)
+        ),
+        url("../assets/img/salud-y-bienestar.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    padding: 65px 0;
+}
+
+
+.hero-contenido {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+
+.hero-texto {
+    flex: 1;
+}
+
+
+.hero-texto h1 {
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    color: #183c22;
+
+    margin-bottom: 18px;
+}
+
+
+.etiqueta {
+    color: #477641;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+
+.hero-descripcion {
+    max-width: 600px;
+
+    font-size: 17px;
+
+    color: #3f4f3e;
+}
+
+
+.hero-botones {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+    margin-bottom: 28px;
+}
+
+
+.hero-imagen {
+    flex: 1;
+}
+
+
+.hero-imagen img {
+    width: 100%;
+
+    max-height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   8. BENEFICIOS DEL HERO
+   ========================================================= */
+
+.beneficios-hero {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.beneficios-hero div {
+    background-color: rgba(255, 255, 255, 0.90);
+
+    border-radius: 7px;
+
+    padding: 10px 12px;
+
+    min-width: 135px;
+}
+
+
+.beneficios-hero strong {
+    display: block;
+
+    color: #1f4d2b;
+
+    font-size: 13px;
+}
+
+
+.beneficios-hero span {
+    display: block;
+
+    color: #465445;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   9. SECCIONES GENERALES
+   ========================================================= */
+
+.seccion {
+    padding: 42px 0;
+}
+
+
+.titulo-seccion {
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+
+.titulo-seccion h2 {
+    color: #1f4d2b;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+
+.titulo-seccion p {
+    color: #435242;
+}
+
+
+/* =========================================================
+   10. SOBRE NOSOTROS
+   ========================================================= */
+
+.nosotros {
+    background-color: white;
+}
+
+
+/*
+   El título se alinea con la columna
+   donde está el texto.
+*/
+.nosotros .titulo-seccion {
+    width: 90%;
+
+    max-width: 1180px;
+
+    margin: 0 auto 22px;
+
+    padding-left: calc(50% + 22px);
+
+    text-align: left;
+}
+
+
+.nosotros-contenido {
+    display: flex;
+
+    align-items: center;
+
+    gap: 42px;
+}
+
+
+.nosotros-imagen {
+    flex: 0.95;
+}
+
+
+.nosotros-imagen img {
+    width: 100%;
+
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+
+.nosotros-texto {
+    flex: 1.05;
+}
+
+
+.nosotros-texto h3 {
+    color: #1f4d2b;
+
+    font-size: 25px;
+}
+
+
+.nosotros-texto p {
+    color: #3c4c3b;
+}
+
+
+/* =========================================================
+   11. DATOS DE SOBRE NOSOTROS
+   ========================================================= */
+
+.datos-nosotros {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.datos-nosotros div {
+    flex: 1;
+
+    min-width: 120px;
+
+    background-color: #edf4e9;
+
+    padding: 12px;
+
+    border-radius: 7px;
+}
+
+
+.datos-nosotros strong {
+    display: block;
+
+    color: #1f4d2b;
+}
+
+
+.datos-nosotros span {
+    display: block;
+
+    color: #3c4c3b;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   12. MISIÓN, VISIÓN Y VALORES
+   ========================================================= */
+
+.valores {
+    background-image:
+        linear-gradient(
+            rgba(245, 248, 243, 0.82),
+            rgba(245, 248, 243, 0.82)
+        ),
+        url("../assets/img/salud-y-bienestar.png");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.tarjetas-valores {
+    max-width: 820px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.tarjeta-valor {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 20px;
+
+    background-color: rgba(255, 255, 255, 0.96);
+
+    border-radius: 8px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+
+.tarjeta-valor h3 {
+    min-width: 150px;
+
+    margin: 0;
+
+    color: #1f4d2b;
+}
+
+
+.tarjeta-valor p {
+    margin: 0;
+
+    color: #455244;
+}
+
+
+.icono-valor {
+    width: 50px;
+
+    height: 50px;
+
+    min-width: 50px;
+
+    border-radius: 50%;
+
+    background-color: #1f4d2b;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   13. ESPECIALIDADES
+   ========================================================= */
+
+.especialidades {
+    background-image:
+        url("../assets/img/habitos-saludables.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.especialidades .titulo-seccion {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    padding: 18px;
+
+    background-color: rgba(255, 255, 255, 0.88);
+
+    border-radius: 10px;
+}
+
+
+.lista-especialidades {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+}
+
+
+.tarjeta-especialidad {
+    width: calc(50% - 8px);
+
+    background-color: #d4e3cf;
+
+    padding: 22px;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+.tarjeta-especialidad:hover {
+    background-color: #c2d7bc;
+
+    transform: translateY(-3px);
+}
+
+
+.tarjeta-especialidad h3 {
+    color: #1f4d2b;
+}
+
+
+.tarjeta-especialidad p {
+    color: #354634;
+}
+
+
+.centrar {
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   14. ACOMPAÑAMIENTO
+   ========================================================= */
+
+.acompanamiento {
+    background-color: white;
+}
+
+
+.acompanamiento-contenido {
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+
+.acompanamiento-imagen,
+.acompanamiento-texto {
+    flex: 1;
+}
+
+
+.acompanamiento-imagen img {
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+
+.acompanamiento-texto h2 {
+    color: #1f4d2b;
+
+    font-size: 30px;
+}
+
+
+/* =========================================================
+   15. PROFESIONALES
+   ========================================================= */
+
+.profesionales {
+    background-color: #f0f5ed;
+}
+
+
+.lista-profesionales {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.tarjeta-profesional {
+    /*
+       Cuatro tarjetas aproximadamente iguales.
+    */
+    width: calc(25% - 12px);
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+
+.tarjeta-profesional img {
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: contain;
+
+    transition: transform 0.3s;
+}
+
+
+.tarjeta-profesional:hover img {
+    transform: scale(1.08);
+}
+
+
+.contenido-profesional {
+    padding: 17px;
+}
+
+
+.contenido-profesional h3 {
+    color: #1f4d2b;
+
+    margin-bottom: 4px;
+}
+
+
+.contenido-profesional h4 {
+    color: #477641;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+
+.contenido-profesional p {
+    font-size: 14px;
+
+    color: #485747;
+}
+
+
+/* =========================================================
+   16. BIENESTAR
+   ========================================================= */
+
+.bienestar {
+    background-color: white;
+}
+
+
+.bienestar-contenido {
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+
+.bienestar-texto,
+.bienestar-imagen {
+    flex: 1;
+}
+
+
+.bienestar-texto h2 {
+    color: #1f4d2b;
+
+    font-size: 30px;
+}
+
+
+.bienestar-imagen img {
+    width: 100%;
+
+    max-height: 340px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   17. VIDEO
+   ========================================================= */
+
+.seccion-video {
+    background-color: #e8f0e4;
+}
+
+
+.video-contenido {
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+
+.video-texto {
+    flex: 0.75;
+}
+
+
+.video-texto h2 {
+    color: #1f4d2b;
+
+    font-size: 30px;
+}
+
+
+.video {
+    flex: 1.45;
+}
+
+
+/*
+   iframe permite mostrar un contenido externo,
+   en este caso un video de YouTube.
+*/
+.video iframe {
+    width: 100%;
+
+    height: 420px;
+
+    border: 0;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   18. CONTACTO
+   ========================================================= */
+
+.contacto {
+    background-color: white;
+}
+
+
+.contacto-contenido {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+
+.contacto-texto h2 {
+    color: #1f4d2b;
+
+    font-size: 30px;
+}
+
+
+.contacto-columnas {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 30px;
+}
+
+
+.info-clinica,
+.formulario {
+    flex: 1;
+}
+
+
+/* Bloque de información de la clínica */
+
+.info-clinica {
+    background-color: #f1f6ee;
+
+    border-radius: 10px;
+
+    padding: 25px;
+}
+
+
+.info-clinica h3 {
+    color: #1f4d2b;
+
+    margin-bottom: 6px;
+}
+
+
+.info-clinica > p {
+    color: #485747;
+
+    font-size: 14px;
+
+    margin-bottom: 16px;
+}
+
+
+.info-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+
+.info-icono {
+    font-size: 20px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+}
+
+
+.info-item strong {
+    display: block;
+
+    color: #1f4d2b;
+
+    margin-bottom: 2px;
+
+    font-size: 14px;
+}
+
+
+.info-item p {
+    color: #485747;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/*
+   Formulario de contacto.
+*/
+.formulario {
+    display: flex;
+
+    flex-direction: column;
+
+    background-color: #f1f6ee;
+
+    padding: 25px;
+
+    border-radius: 10px;
+}
+
+
+.formulario label {
+    margin-top: 12px;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #b8c4b5;
+
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+}
+
+
+.formulario textarea {
+    resize: vertical;
+}
+
+
+.formulario button {
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #1f4d2b;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.formulario button:hover {
+    background-color: #2f663c;
+}
+
+
+/* =========================================================
+   19. PORTADA DE PÁGINAS INTERNAS
+   ========================================================= */
+
+.portada-interna {
+    background-color: #e7f0e3;
+
+    padding: 45px 0;
+
+    text-align: center;
+}
+
+
+.portada-interna h1 {
+    color: #1f4d2b;
+
+    font-size: 36px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   20. CATÁLOGO DE SERVICIOS
+   ========================================================= */
+
+.lista-servicios {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+.tarjeta-servicio {
+    /*
+       Tres tarjetas por fila aproximadamente.
+    */
+    width: calc(33.333% - 14px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+
+/*
+   Imagen principal del PLAN.
+   No es la imagen del nutricionista.
+*/
+.tarjeta-servicio > img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    transition: transform 0.3s;
+}
+
+
+.tarjeta-servicio:hover > img {
+    transform: scale(1.05);
+}
+
+
+.contenido-servicio {
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+.contenido-servicio h2,
+.contenido-servicio h3 {
+    color: #1f4d2b;
+}
+
+
+.contenido-servicio p {
+    color: #465445;
+}
+
+
+/* =========================================================
+   21. PROFESIONAL PEQUEÑO EN SERVICIOS
+   ========================================================= */
+
+.profesional-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 12px 0;
+}
+
+
+.profesional-mini img {
+    width: 58px;
+
+    height: 58px;
+
+    min-width: 58px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    transition: transform 0.3s;
+}
+
+
+.profesional-mini img:hover {
+    transform: scale(1.40);
+}
+
+
+.profesional-mini span {
+    font-size: 13px;
+
+    color: #3e4d3d;
+}
+
+
+/*
+   auto hace que el precio quede hacia abajo
+   aunque una descripción sea más larga.
+*/
+.precio-servicio {
+    margin-top: auto;
+
+    color: #1f4d2b;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   22. DETALLE DE SERVICIOS
+   ========================================================= */
+
+.detalle-servicio {
+    padding: 45px 0;
+
+    background-color: white;
+}
+
+
+.detalle-alterno {
+    background-color: #edf4e9;
+}
+
+
+.detalle-contenido {
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+
+.imagen-servicio,
+.informacion-servicio {
+    flex: 1;
+}
+
+
+.imagen-servicio img {
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    transition: transform 0.3s;
+}
+
+
+.imagen-servicio img:hover {
+    transform: scale(1.03);
+}
+
+
+.informacion-servicio h2 {
+    color: #1f4d2b;
+
+    font-size: 30px;
+}
+
+
+.lista-detalle {
+    padding-left: 20px;
+
+    color: #40503f;
+}
+
+
+.precio-grande {
+    color: #1f4d2b;
+
+    font-size: 27px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   23. PROFESIONALES EN DETALLE
+   ========================================================= */
+
+.profesionales-detalle {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin: 15px 0;
+}
+
+
+.profesional-detalle {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.profesional-detalle img {
+    width: 72px;
+
+    height: 72px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    transition: transform 0.3s;
+}
+
+
+.profesional-detalle img:hover {
+    transform: scale(1.35);
+}
+
+
+.especialidad-profesional {
+    display: block;
+
+    font-size: 12px;
+
+    color: #526451;
+}
+
+
+/* =========================================================
+   24. INFORMACIÓN EXTRA DE SERVICIOS
+   ========================================================= */
+
+/*
+   Inicialmente permanece oculta.
+
+   JavaScript cambia display a block
+   cuando el usuario presiona el botón.
+*/
+.informacion-extra {
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background-color: #edf4e9;
+
+    border-radius: 7px;
+
+    color: #354634;
+}
+
+
+.seccion-final-servicio {
+    padding: 40px 0;
+
+    text-align: center;
+
+    background-color: #e4eee0;
+}
+
+
+/* =========================================================
+   25. LOGIN Y REGISTRO
+   ========================================================= */
+
+/*
+   Fondo de las páginas de acceso.
+*/
+.pagina-acceso {
+    min-height: 720px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 45px 20px;
+
+    background-color: #f2f6ef;
+}
+
+
+/*
+   Tarjeta grande que contiene:
+   - parte izquierda con logo
+   - parte derecha con formulario
+*/
+.tarjeta-acceso {
+    width: 100%;
+
+    max-width: 1050px;
+
+    display: flex;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   26. LADO IZQUIERDO DE LOGIN / REGISTRO
+   ========================================================= */
+
+.lado-acceso {
+    width: 38%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 45px 30px;
+
+    background-color: #e4eee0;
+}
+
+
+.lado-acceso img {
+    width: 250px;
+
+    max-width: 100%;
+
+    margin-bottom: 25px;
+
+    object-fit: contain;
+}
+
+
+.lado-acceso h1 {
+    color: #1f4d2b;
+
+    font-size: 31px;
+
+    margin-bottom: 20px;
+}
+
+
+.lado-acceso p {
+    color: #40503f;
+
+    max-width: 290px;
+}
+
+
+/* =========================================================
+   27. LADO DERECHO DE LOGIN / REGISTRO
+   ========================================================= */
+
+.formulario-acceso {
+    width: 62%;
+
+    padding: 40px 45px;
+}
+
+
+.formulario-acceso h2 {
+    color: #1f4d2b;
+
+    font-size: 27px;
+
+    margin-bottom: 5px;
+}
+
+
+.formulario-acceso > p {
+    color: #475746;
+
+    margin-top: 5px;
+
+    margin-bottom: 20px;
+}
+
+
+/*
+   El formulario usa Flexbox en dirección vertical.
+
+   Esto evita justamente el problema anterior
+   donde los campos aparecían todos pegados.
+*/
+.formulario-acceso form {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   28. LABEL DE LOGIN / REGISTRO
+   ========================================================= */
+
+.formulario-acceso label {
+    display: block;
+
+    margin-top: 13px;
+
+    margin-bottom: 5px;
+
+    color: #253123;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   29. INPUT Y SELECT DE LOGIN / REGISTRO
+   ========================================================= */
+
+.formulario-acceso input,
+.formulario-acceso select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #b8c4b5;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #253123;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+}
+
+
+/*
+   :focus ocurre cuando el usuario está
+   escribiendo o seleccionando ese campo.
+*/
+.formulario-acceso input:focus,
+.formulario-acceso select:focus {
+    outline: 2px solid #7ca172;
+
+    border-color: #567d4f;
+}
+
+
+/* =========================================================
+   30. TEXTOS PEQUEÑOS DE AYUDA
+   ========================================================= */
+
+.formulario-acceso small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #526451;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   31. FILAS DE DOS CAMPOS EN REGISTRO
+   ========================================================= */
+
+/*
+   Esta clase crea una fila.
+
+   Ejemplo:
+
+   Nombre       Apellidos
+   [_______]    [_______]
+*/
+.fila-formulario {
+    width: 100%;
+
+    display: flex;
+
+    gap: 16px;
+}
+
+
+/*
+   flex:1 permite que cada campo ocupe
+   la misma cantidad de espacio.
+*/
+.campo-formulario {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/*
+   El input/select dentro de cada columna
+   ocupa todo el ancho disponible.
+*/
+.campo-formulario input,
+.campo-formulario select {
+    width: 100%;
+}
+
+
+/* =========================================================
+   32. BOTÓN DEL FORMULARIO DE ACCESO
+   ========================================================= */
+
+.formulario-acceso button {
+    width: 100%;
+
+    margin-top: 24px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #1f4d2b;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.formulario-acceso button:hover {
+    background-color: #2f663c;
+}
+
+
+/*
+   Enlaces que están debajo del formulario.
+*/
+.formulario-acceso a {
+    color: #1f4d2b;
+
+    font-weight: bold;
+}
+
+
+.formulario-acceso a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   33. PIE DE PÁGINA
+   ========================================================= */
+
+footer {
+    background-color: #1f4d2b;
+
+    color: white;
+}
+
+
+.footer-contenido {
+    padding: 24px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 45px;
+}
+
+
+.footer-contenido img {
+    width: 110px;
+
+    background-color: white;
+
+    padding: 4px;
+
+    border-radius: 5px;
+}
+
+
+.footer-contenido h3 {
+    margin-bottom: 5px;
+}
+
+
+.footer-contenido p {
+    margin: 5px 0;
+
+    font-size: 13px;
+}
+
+
+.footer-final {
+    padding: 8px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+
+.footer-final p {
+    margin: 0;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   34. DISEÑO RESPONSIVO - TABLET
+   ========================================================= */
+
+/*
+   @media permite cambiar el diseño según
+   el tamaño de la pantalla.
+
+   Cuando la pantalla mide 900px o menos,
+   aplicamos estas reglas.
+*/
+@media (max-width: 900px) {
+
+    /* Encabezado en varias líneas */
+    .encabezado {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding: 15px 0;
+    }
+
+
+    /* Hero en columna */
+    .hero-contenido {
+        flex-direction: column;
+    }
+
+
+    /* Sobre nosotros en columna */
+    .nosotros-contenido {
+        flex-direction: column;
+    }
+
+
+    /*
+       Como ya no hay dos columnas,
+       quitamos el desplazamiento del título.
+    */
+    .nosotros .titulo-seccion {
+        padding-left: 0;
+
+        text-align: center;
+    }
+
+
+    /* Acompañamiento en columna */
+    .acompanamiento-contenido {
+        flex-direction: column;
+    }
+
+
+    /* Bienestar en columna */
+    .bienestar-contenido {
+        flex-direction: column;
+    }
+
+
+    /* Video en columna */
+    .video-contenido {
+        flex-direction: column;
+    }
+
+
+    .video {
+        width: 100%;
+    }
+
+
+    /* Contacto en columna */
+    .contacto-contenido {
+        flex-direction: column;
+    }
+
+
+    .formulario {
+        width: 100%;
+    }
+
+
+    /*
+       Profesionales pasan de cuatro
+       a dos aproximadamente por fila.
+    */
+    .tarjeta-profesional {
+        width: calc(50% - 8px);
+    }
+
+
+    /*
+       Servicios pasan a dos por fila.
+    */
+    .tarjeta-servicio {
+        width: calc(50% - 10px);
+    }
+
+
+    /* Detalle de servicio en columna */
+    .detalle-contenido {
+        flex-direction: column;
+    }
+
+
+    /*
+       Login/registro dejan de estar
+       lado a lado.
+    */
+    .tarjeta-acceso {
+        flex-direction: column;
+
+        max-width: 720px;
+    }
+
+
+    .lado-acceso,
+    .formulario-acceso {
+        width: 100%;
+    }
+
+
+    .lado-acceso {
+        padding: 30px;
+    }
+
+
+    .lado-acceso img {
+        width: 180px;
+
+        margin-bottom: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   35. DISEÑO RESPONSIVO - CELULAR
+   ========================================================= */
+
+/*
+   Estas reglas se aplican cuando la pantalla
+   mide 600px o menos.
+*/
+@media (max-width: 600px) {
+
+    .contenedor {
+        width: 92%;
+    }
+
+
+    .menu {
+        width: 100%;
+
+        gap: 12px;
+    }
+
+
+    .acceso {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .hero {
+        padding: 40px 0;
+    }
+
+
+    .hero-texto h1 {
+        font-size: 32px;
+    }
+
+
+    .hero-botones {
+        flex-direction: column;
+    }
+
+
+    .beneficios-hero {
+        flex-direction: column;
+    }
+
+
+    /*
+       Las especialidades pasan a una
+       tarjeta por fila.
+    */
+    .tarjeta-especialidad {
+        width: 100%;
+    }
+
+
+    /*
+       Los profesionales pasan a una
+       tarjeta por fila.
+    */
+    .tarjeta-profesional {
+        width: 100%;
+    }
+
+
+    /*
+       Los servicios pasan a una
+       tarjeta por fila.
+    */
+    .tarjeta-servicio {
+        width: 100%;
+    }
+
+
+    /*
+       Misión, visión y valores se ordenan
+       verticalmente internamente.
+    */
+    .tarjeta-valor {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .tarjeta-valor h3 {
+        min-width: 0;
+    }
+
+
+    /*
+       El video disminuye de altura
+       para adaptarse al celular.
+    */
+    .video iframe {
+        height: 260px;
+    }
+
+
+    /*
+       En celulares Nombre/Apellido,
+       Región/Comuna y Contraseñas
+       dejan de estar lado a lado.
+    */
+    .fila-formulario {
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+
+    .formulario-acceso {
+        padding: 28px 22px;
+    }
+
+
+    .pagina-acceso {
+        padding: 25px 10px;
+    }
+
+
+    .footer-contenido {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
