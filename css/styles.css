@@ -125,15 +125,17 @@ header {
    ========================================================= */
 
 .logo img {
-    height: 48px;
-
-    width: auto;
+    width: 120px;
 
     background-color: white;
+    height: auto;
+    /* evita que se deforme */
+    display: block;
+    /* elimina espacio fantasma bajo la imagen */
+    object-fit: contain;
+    border-radius: 6px;
 
-    border-radius: 10px;
-
-    padding: 3px 8px;
+    padding: 4px;
 }
 
 
@@ -269,10 +271,8 @@ header {
        utilizamos ../ para volver a la raíz.
     */
     background-image:
-        linear-gradient(
-            rgba(245, 248, 243, 0.90),
-            rgba(245, 248, 243, 0.90)
-        ),
+        linear-gradient(rgba(245, 248, 243, 0.90),
+            rgba(245, 248, 243, 0.90)),
         url("../assets/img/salud-y-bienestar.png");
 
     background-size: cover;
@@ -553,10 +553,8 @@ header {
 
 .valores {
     background-image:
-        linear-gradient(
-            rgba(245, 248, 243, 0.82),
-            rgba(245, 248, 243, 0.82)
-        ),
+        linear-gradient(rgba(245, 248, 243, 0.82),
+            rgba(245, 248, 243, 0.82)),
         url("../assets/img/salud-y-bienestar.png");
 
     background-size: cover;
@@ -981,7 +979,7 @@ header {
 }
 
 
-.info-clinica > p {
+.info-clinica>p {
     color: #485747;
 
     font-size: 14px;
@@ -1161,7 +1159,7 @@ header {
    Imagen principal del PLAN.
    No es la imagen del nutricionista.
 */
-.tarjeta-servicio > img {
+.tarjeta-servicio>img {
     width: 100%;
 
     height: 220px;
@@ -1172,7 +1170,7 @@ header {
 }
 
 
-.tarjeta-servicio:hover > img {
+.tarjeta-servicio:hover>img {
     transform: scale(1.05);
 }
 
@@ -1196,6 +1194,79 @@ header {
 
 .contenido-servicio p {
     color: #465445;
+}
+
+
+.orientacion-imagen {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+
+
+}
+
+.orientacion-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+.orientacion-contenido {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.orientacion-texto {
+    flex: 1;
+}
+
+.boton-detalle {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+
+    color: #2e7d32;
+    background-color: transparent;
+    border: 2px solid #2e7d32;
+    border-radius: 8px;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-detalle:hover {
+    background-color: #2e7d32;
+    color: #ffffff;
+}
+
+
+
+.btn-mas-info {
+    padding: 0.7rem 1.6rem;
+
+    background-color: #1d1d1f;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 980px;
+    /* forma de píldora, típico de Apple */
+
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.btn-mas-info:hover {
+    background-color: #000000;
 }
 
 
@@ -1531,7 +1602,7 @@ header {
 }
 
 
-.formulario-acceso > p {
+.formulario-acceso>p {
     color: #475746;
 
     margin-top: 5px;
