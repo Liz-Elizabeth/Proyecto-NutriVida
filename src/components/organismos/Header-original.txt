@@ -1,0 +1,354 @@
+
+ {/* =========================================================
+     ENCABEZADO
+     ========================================================= */}
+
+    <header>
+
+        <div className="contenedor encabezado">
+
+
+            {/* Logo */}
+
+            <a href="index.html" class="logo">
+
+                <img src="assets/img/logo-nutrivida.png" alt="Logo NutriVida"/>
+
+            </a>
+
+
+            {/* Navegación */}
+
+            <nav class="menu">
+
+                <a href="index.html">Inicio</a>
+
+                <a href="servicios.html">Servicios</a>
+
+                <a href="#nosotros">Nosotros</a>
+
+                <a href="#especialidades">Especialidades</a>
+
+                <a href="#profesionales">Profesionales</a>
+
+                <a href="#contacto">Contacto</a>
+
+            </nav>
+
+
+            {/* Acceso */}
+
+            <div class="acceso">
+
+                <a href="login.html" class="boton-login">
+                    Iniciar sesión
+                </a>
+
+                <a href="registro.html" class="boton-registro">
+                    Registrarse
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+/*
+===========================================================
+NUTRIVIDA - MIGRACIÓN DEL HEADER DE HTML A REACT
+===========================================================
+
+ARCHIVO ORIGINAL:
+index.html
+
+ARCHIVO NUEVO:
+src/components/organisms/Header.jsx
+
+OBJETIVO:
+Convertir el encabezado original de NutriVida en un
+componente React reutilizable, manteniendo su diseño,
+sus textos, sus imágenes y sus clases CSS originales.
+
+
+1. CREACIÓN DEL COMPONENTE
+-----------------------------------------------------------
+
+ANTES (HTML):
+El encabezado estaba escrito directamente en index.html.
+
+AHORA (REACT):
+function Header() {
+  return (
+    // Aquí se muestra el encabezado
+  )
+}
+
+¿POR QUÉ?
+React permite dividir la interfaz en componentes.
+Header es un organismo de Atomic Design porque reúne
+el logo, el menú y los botones de acceso.
+
+La función devuelve el JSX mediante return.
+
+
+2. CAMBIO DE CLASS A CLASSNAME
+-----------------------------------------------------------
+
+ANTES:
+class="contenedor encabezado"
+class="logo"
+class="menu"
+class="acceso"
+class="boton-login"
+class="boton-registro"
+
+AHORA:
+className="contenedor encabezado"
+className="logo"
+className="menu"
+className="acceso"
+className="boton-login"
+className="boton-registro"
+
+¿POR QUÉ?
+En JSX se utiliza className para asignar clases CSS.
+
+IMPORTANTE:
+Las clases conservan sus mismos nombres, por lo que
+seguimos utilizando el CSS original de NutriVida.
+
+
+3. IMPORTACIÓN DEL LOGO
+-----------------------------------------------------------
+
+ANTES (HTML):
+<img src="assets/img/logo-nutrivida.png"
+     alt="Logo NutriVida">
+
+AHORA (REACT):
+import logoNutri from '../../assets/img/logo-nutrivida.png'
+
+Y dentro del return:
+
+<img src={logoNutri} alt="Logo NutriVida" />
+
+¿POR QUÉ?
+La imagen está guardada dentro de src/assets/img.
+
+Vite puede procesar esa imagen cuando la importamos.
+
+logoNutri es una variable cuyo nombre elegimos nosotros.
+No cambia el nombre real del archivo.
+
+Las llaves {logoNutri} permiten utilizar la variable
+de JavaScript dentro del JSX.
+
+../../ significa subir dos carpetas desde organisms
+para llegar a src y después entrar en assets/img.
+
+
+4. CAMBIO DEL ENLACE DE INICIO
+-----------------------------------------------------------
+
+ANTES:
+href="index.html"
+
+AHORA:
+href="/"
+
+¿POR QUÉ?
+La barra / representa la ruta principal del sitio.
+
+Cuando configuremos React Router, la ruta /
+mostrará la página Inicio.
+
+
+5. CAMBIO DEL ENLACE DE SERVICIOS
+-----------------------------------------------------------
+
+ANTES:
+href="servicios.html"
+
+AHORA:
+href="/servicios"
+
+¿POR QUÉ?
+En React Router utilizaremos rutas para mostrar
+componentes de páginas, en lugar de navegar
+entre archivos HTML independientes.
+
+
+6. CAMBIO DEL ENLACE DE LOGIN
+-----------------------------------------------------------
+
+ANTES:
+href="login.html"
+
+AHORA:
+href="/login"
+
+¿POR QUÉ?
+La ruta /login mostrará el componente de la
+página de inicio de sesión cuando lo creemos.
+
+
+7. CAMBIO DEL ENLACE DE REGISTRO
+-----------------------------------------------------------
+
+ANTES:
+href="registro.html"
+
+AHORA:
+href="/registro"
+
+¿POR QUÉ?
+La ruta /registro mostrará el formulario de registro
+cuando configuremos esa página en React.
+
+
+8. CAMBIO DE LOS ENLACES A SECCIONES
+-----------------------------------------------------------
+
+ANTES:
+href="#nosotros"
+href="#especialidades"
+href="#profesionales"
+href="#contacto"
+
+AHORA:
+href="/#nosotros"
+href="/#especialidades"
+href="/#profesionales"
+href="/#contacto"
+
+¿POR QUÉ?
+Agregamos / para señalar que las secciones
+pertenecen a la página Inicio.
+
+ATENCIÓN:
+Cuando configuremos React Router, comprobaremos
+también que los enlaces desplacen correctamente
+la pantalla hasta cada sección.
+
+
+9. USO DE IMPORT REACT
+-----------------------------------------------------------
+
+CÓDIGO:
+import React from 'react'
+
+¿POR QUÉ?
+El atajo rfce puede generar esta importación.
+
+React es la biblioteca que utilizamos para crear
+los componentes de nuestra aplicación.
+
+Con la configuración moderna de Vite, esta importación
+no siempre es necesaria si no utilizamos React
+directamente dentro del archivo.
+
+
+10. USO DE EXPORT DEFAULT
+-----------------------------------------------------------
+
+CÓDIGO:
+export default Header
+
+¿POR QUÉ?
+Permite importar y utilizar este componente
+desde otro archivo.
+
+Por ejemplo, desde App.jsx podremos escribir:
+
+import Header from './components/organisms/Header'
+
+Y después mostrarlo utilizando:
+
+<Header />
+
+
+11. COMENTARIOS DEL CÓDIGO
+-----------------------------------------------------------
+
+ANTES (HTML):
+Los comentarios se escribían así:
+
+<!-- Comentario HTML -->
+
+AHORA (REACT):
+
+Fuera del JSX:
+Podemos utilizar // o comentarios de bloque.
+
+Dentro del JSX:
+Utilizamos la sintaxis de comentario JSX:
+
+{ /* Comentario JSX * / }
+
+NOTA:
+En un comentario JSX real se escriben los símbolos
+sin los espacios adicionales del ejemplo anterior.
+
+Los comentarios sirven para estudiar y documentar
+nuestro código. No aparecen en la página.
+
+
+12. COSAS QUE NO CAMBIAMOS
+-----------------------------------------------------------
+
+Se conservaron:
+
+- El logo original de NutriVida.
+- El texto Inicio.
+- El texto Servicios.
+- El texto Nosotros.
+- El texto Especialidades.
+- El texto Profesionales.
+- El texto Contacto.
+- El botón Iniciar sesión.
+- El botón Registrarse.
+- La estructura general de header, nav y div.
+- Los nombres de todas las clases CSS.
+- Los colores y estilos definidos en el CSS original.
+
+No se realizó un rediseño visual.
+
+
+13. CAMBIOS PENDIENTES
+-----------------------------------------------------------
+
+Todavía debemos:
+
+- Importar Header desde App.jsx.
+- Eliminar el encabezado anterior de App.jsx
+  para evitar que aparezca duplicado.
+- Configurar React Router.
+- Adaptar los enlaces para utilizar Link cuando
+  corresponda.
+- Comprobar la navegación a las secciones.
+- Probar que el diseño sea igual al original.
+
+
+===========================================================
+RESUMEN PARA LA PRESENTACIÓN
+===========================================================
+
+Convertimos el encabezado HTML original en un
+componente funcional React llamado Header.
+
+Adaptamos la sintaxis de HTML a JSX, importamos
+el logo y preparamos las rutas de navegación.
+
+Conservamos las clases CSS y la estructura visual
+original para mantener la fidelidad del diseño.
+
+Ubicamos Header dentro de organisms porque agrupa
+varios elementos de la interfaz según Atomic Design.
+===========================================================
+*/
+
+
+
