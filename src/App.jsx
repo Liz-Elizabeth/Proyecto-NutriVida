@@ -5,6 +5,9 @@ import './App.css'
 /* Importamos el componente Header que creamos */
 import Header from './components/organismos/Header.jsx'
 
+// Importamos la página Inicio
+import Inicio from './pages/Inicio.jsx'
+
 // Componente principal de nuestra aplicación
 function App() {
 
@@ -12,6 +15,8 @@ function App() {
     <>
       {/* Mostramos el encabezado de NutriVida */}
       <Header />
+
+      <Inicio />
     </>
   )
 

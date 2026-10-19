@@ -1,0 +1,441 @@
+============================================================
+NUTRIVIDA - PORTADA ORIGINAL Y MIGRACIÓN A REACT
+DOCUMENTO DE ESTUDIO - HERO, INICIO Y COMPONENTES
+============================================================
+
+OBJETIVO
+Conservar el HTML original y explicar qué cambió al migrarlo
+al proyecto React + Vite con Atomic Design.
+
+
+
+============================================================
+1. HTML ORIGINAL DE LA PORTADA (INDEX.HTML)
+============================================================
+
+<!-- =====================================================
+     PORTADA
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="contenedor hero-contenido">
+
+        <!-- Texto -->
+        <div class="hero-texto">
+
+            <p class="etiqueta">
+                CLÍNICA DE NUTRICIÓN
+            </p>
+
+            <h1>
+                Asesoría nutricional personalizada
+            </h1>
+
+            <p class="hero-descripcion">
+                En NutriVida te acompañamos a mejorar
+                tu alimentación mediante una atención
+                personalizada según tus necesidades
+                y objetivos.
+            </p>
+
+            <div class="hero-botones">
+                <a href="servicios.html" class="boton-principal">
+                    Ver servicios
+                </a>
+
+                <a href="#nosotros" class="boton-secundario">
+                    Conócenos
+                </a>
+            </div>
+
+            <!-- Beneficios destacados -->
+            <div class="beneficios-hero">
+                <div>
+                    <strong>Atención personalizada Presencial y Online</strong>
+                    <span>Te acompañamos desde donde estés</span>
+                </div>
+
+                <div>
+                    <strong>Profesionales</strong>
+                    <span>Distintas especialidades</span>
+                </div>
+
+                <div>
+                    <strong>Seguimiento</strong>
+                    <span>Acompañamiento continuo</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Imagen -->
+        <div class="hero-imagen">
+            <img src="assets/img/habitos-saludables.png"
+                 alt="Hábitos de alimentación saludable">
+        </div>
+
+    </div>
+
+</section>
+
+
+============================================================
+2. ESTRUCTURA QUE LLEVAMOS EN REACT
+============================================================
+
+src/
+  assets/
+    img/
+      habitos-saludables.png
+      logo-nutrivida.png
+  components/
+    atomos/
+      Boton.jsx
+      Logo.jsx
+    moleculas/
+      BotonesHero.jsx
+      BotonesAcceso.jsx
+      MenuNavegacion.jsx
+      TextoHero.jsx
+    organismos/
+      Header.jsx
+      Header-original.txt     <-- EL ARCHIVO DE ESTUDIO ANTERIOR
+      Hero.jsx
+  pages/
+    Inicio.jsx
+  App.jsx
+  App.css
+  main.jsx
+
+* Solo se enumeran los archivos relevantes de esta etapa.
+
+COMUNICACIÓN ENTRE COMPONENTES:
+
+main.jsx
+   -> App.jsx
+      -> Header.jsx
+         -> Logo.jsx
+         -> MenuNavegacion.jsx
+         -> BotonesAcceso.jsx
+            -> Boton.jsx
+      -> Inicio.jsx
+         -> Hero.jsx
+            -> TextoHero.jsx
+               -> BotonesHero.jsx
+                  -> Boton.jsx
+            -> Imagen original habitos-saludables.png
+
+IMPORTANTE: Los beneficios están dentro de TextoHero.jsx.
+
+
+============================================================
+3. REACT - ÁTOMO Boton.jsx
+Ruta: src/components/atomos/Boton.jsx
+============================================================
+
+/*
+  Átomo reutilizable para enlaces que se ven como botones.
+  Recibe datos mediante props.
+*/
+function Boton({ texto, enlace, clase }) {
+  return (
+    <a href={enlace} className={clase}>
+      {texto}
+    </a>
+  )
+}
+
+export default Boton
+
+CAMBIOS RESPECTO AL HTML:
+- Antes cada <a> repetía su propia estructura.
+- Ahora Boton recibe tres props: texto, enlace y clase.
+- {texto} muestra el texto recibido.
+- href={enlace} establece su destino.
+- className={clase} aplica la clase CSS original.
+- «export default» deja el componente disponible para importar.
+- Este Boton está destinado a enlaces de navegación; para guardar
+  formularios o ejecutar acciones se utiliza <button>.
+
+
+============================================================
+4. REACT - MOLÉCULA BotonesHero.jsx
+Ruta: src/components/moleculas/BotonesHero.jsx
+============================================================
+
+import Boton from '../atomos/Boton.jsx'
+
+// Molécula: los dos enlaces de la portada original
+function BotonesHero() {
+  return (
+    <div className="hero-botones">
+      {/* Enlace a Servicios */}
+      <Boton
+        texto="Ver servicios"
+        enlace="/servicios"
+        clase="boton-principal"
+      />
+
+      {/* Enlace a Nosotros */}
+      <Boton
+        texto="Conócenos"
+        enlace="/#nosotros"
+        clase="boton-secundario"
+      />
+    </div>
+  )
+}
+
+export default BotonesHero
+
+CAMBIOS RESPECTO AL HTML:
+- Se conserva <div className="hero-botones"> y por lo tanto el CSS.
+- Los dos <a> originales ahora se generan con dos <Boton />.
+- Las props cambian el texto, destino y apariencia.
+- href="servicios.html" pasó a /servicios como ruta prevista de React.
+- href="#nosotros" pasó a /#nosotros para apuntar a Inicio.
+- ATENCIÓN: aún falta configurar React Router y, para los enlaces
+  de secciones, la navegación/desplazamiento correspondientes.
+
+
+============================================================
+5. REACT - MOLÉCULA TextoHero.jsx
+Ruta: src/components/moleculas/TextoHero.jsx
+============================================================
+
+import BotonesHero from './BotonesHero.jsx'
+
+// Contenido de la columna izquierda de la portada
+function TextoHero() {
+  return (
+    <div className="hero-texto">
+      {/* Etiqueta original */}
+      <p className="etiqueta">
+        CLÍNICA DE NUTRICIÓN
+      </p>
+
+      {/* Título principal */}
+      <h1>Asesoría nutricional personalizada</h1>
+
+      {/* Descripción original */}
+      <p className="hero-descripcion">
+        En NutriVida te acompañamos a mejorar
+        tu alimentación mediante una atención
+        personalizada según tus necesidades
+        y objetivos.
+      </p>
+
+      {/* Botones provenientes de otra molécula */}
+      <BotonesHero />
+
+      {/* Beneficios que estaban debajo de los botones */}
+      <div className="beneficios-hero">
+        <div>
+          <strong>Atención personalizada Presencial y Online</strong>
+          <span>Te acompañamos desde donde estés</span>
+        </div>
+        <div>
+          <strong>Profesionales</strong>
+          <span>Distintas especialidades</span>
+        </div>
+        <div>
+          <strong>Seguimiento</strong>
+          <span>Acompañamiento continuo</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default TextoHero
+
+CAMBIOS RESPECTO AL HTML:
+- class="hero-texto" pasó a className="hero-texto".
+- Se mantuvieron los textos exactos y sus clases de CSS.
+- Los enlaces del HTML original se reemplazan por <BotonesHero />.
+- Los tres beneficios NO forman otra <section>; continúan dentro
+  de <div className="hero-texto">, como estaban originalmente.
+- No creamos un archivo por cada beneficio: no es necesario.
+
+
+============================================================
+6. REACT - ORGANISMO Hero.jsx
+Ruta: src/components/organismos/Hero.jsx
+============================================================
+
+// Trae el texto, botones y beneficios desde la carpeta moléculas
+import TextoHero from '../moleculas/TextoHero.jsx'
+
+// Importa la imagen desde src/assets/img
+import imagenHabitos from '../../assets/img/habitos-saludables.png'
+
+function Hero() {
+  return (
+    <section className="hero">
+      {/* Flexbox conserva las dos columnas del diseño original */}
+      <div className="contenedor hero-contenido">
+        {/* Columna izquierda */}
+        <TextoHero />
+
+        {/* Columna derecha: imagen original */}
+        <div className="hero-imagen">
+          <img
+            src={imagenHabitos}
+            alt="Hábitos de alimentación saludable"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Hero
+
+CAMBIOS RESPECTO AL HTML:
+- Sección HTML original -> organismo React Hero.jsx.
+- La clase "hero" sigue siendo la misma: className="hero".
+- "contenedor hero-contenido" conserva las dos columnas.
+- El antiguo <div class="hero-texto"> ahora lo genera <TextoHero />.
+- La imagen se importa como variable imagenHabitos.
+- En JSX, src={imagenHabitos} utiliza el archivo importado.
+- El atributo alt original se conserva.
+- No se necesita crear ImagenHero.jsx para una sola imagen fija.
+
+
+============================================================
+7. REACT - PÁGINA Inicio.jsx
+Ruta: src/pages/Inicio.jsx
+============================================================
+
+import Hero from '../components/organismos/Hero.jsx'
+
+function Inicio() {
+  return (
+    <main>
+      {/* Primera sección de la página Inicio */}
+      <Hero />
+
+      {/* Luego irán Nosotros, Valores, Especialidades,
+          Acompañamiento, Profesionales, Bienestar,
+          Video y Contacto, conservando index.html */}
+    </main>
+  )
+}
+
+export default Inicio
+
+CAMBIOS RESPECTO AL HTML:
+- En index.html, <main> reunía todas las secciones de la página.
+- En React, Inicio.jsx reúne los organismos correspondientes.
+- <Hero /> se escribe dentro de <main>.
+- <main> ya es el elemento raíz del retorno; no hace falta Fragment.
+- El resto de secciones de Inicio aún está pendiente.
+
+
+============================================================
+8. REACT - COMPONENTE PRINCIPAL App.jsx
+Ruta: src/App.jsx
+============================================================
+
+import './App.css'
+import Header from './components/organismos/Header.jsx'
+import Inicio from './pages/Inicio.jsx'
+
+function App() {
+  return (
+    <>
+      {/* Encabezado compartido */}
+      <Header />
+      {/* Página Inicio */}
+      <Inicio />
+    </>
+  )
+}
+
+export default App
+
+CAMBIOS RESPECTO AL HTML:
+- App.jsx reúne componentes; no pega todo el HTML en un solo archivo.
+- <Header /> representa el encabezado; <Inicio /> la página.
+- <> y </> forman un Fragment: agrupan ambos sin agregar un div.
+- React Router todavía no está implementado en este paso.
+- Hasta configurar rutas, App muestra Inicio directamente.
+
+
+============================================================
+9. HEADER Y OTRAS MOLÉCULAS QUE YA HICIMOS
+============================================================
+
+Header.jsx: src/components/organismos/Header.jsx
+- Tiene el contenedor <div className="contenedor encabezado">.
+- Importa Logo desde ../atomos/Logo.jsx.
+- Importa MenuNavegacion desde ../moleculas/MenuNavegacion.jsx.
+- Importa BotonesAcceso desde ../moleculas/BotonesAcceso.jsx.
+- Agrupa las tres piezas sin alterar la estructura visual original.
+
+Logo.jsx: src/components/atomos/Logo.jsx
+- Importa ../../assets/img/logo-nutrivida.png.
+- Muestra <img src={logoNutri} alt="Logo NutriVida" />.
+
+BotonesAcceso.jsx: src/components/moleculas/BotonesAcceso.jsx
+- Conserva <div className="acceso">.
+- Utiliza dos <Boton /> con props:
+    texto="Iniciar sesión", enlace="/login", clase="boton-login"
+    texto="Registrarse", enlace="/registro", clase="boton-registro"
+
+MenuNavegacion.jsx: src/components/moleculas/MenuNavegacion.jsx
+- Conserva <nav className="menu">.
+- Contiene Inicio, Servicios, Nosotros, Especialidades,
+  Profesionales y Contacto.
+- Sus rutas se comprobarán al implementar React Router.
+
+PARA COMPARAR EL HTML EXACTO DEL ENCABEZADO,
+CONSULTAR EL ARCHIVO YA EXISTENTE:
+src/components/organismos/Header-original.txt
+
+
+============================================================
+10. GLOSARIO DE CAMBIOS IMPORTANTES
+============================================================
+
+HTML: class="hero"
+JSX:  className="hero"
+POR QUÉ: JSX utiliza className para clases CSS.
+
+HTML: <!-- Comentario -->
+JSX:  {/* Comentario */}
+POR QUÉ: distinta sintaxis para comentarios dentro de JSX.
+
+HTML: <img src="assets/img/habitos-saludables.png">
+JSX:  import imagenHabitos from '../../assets/img/habitos-saludables.png'
+      <img src={imagenHabitos} alt="Hábitos de alimentación saludable" />
+POR QUÉ: Vite procesa la imagen importada como parte del proyecto.
+
+HTML: dos <a> escritos directamente
+JSX:  dos instancias de <Boton /> con props
+POR QUÉ: reutilizar el átomo de navegación con apariencia de botón.
+
+React: export default Hero
+SIGNIFICA: pone Hero a disposición de otros archivos.
+NO significa que se muestre automáticamente.
+
+React: import Hero from '../components/organismos/Hero.jsx'
+SIGNIFICA: Inicio.jsx obtiene el componente Hero.
+
+React: <Hero />
+SIGNIFICA: coloca lo que devuelve Hero en ese lugar de la interfaz.
+
+React: props
+SIGNIFICA: datos que el padre entrega al componente hijo.
+
+React: Fragment <> </>
+SIGNIFICA: agrupa varios elementos JSX sin crear una etiqueta HTML.
+
+Vite: npm.cmd run dev
+SIGNIFICA: inicia el servidor de desarrollo, no crea componentes.
+
+
+============================================================
+FIN DEL ARCHIVO DE REFERENCIA
+============================================================

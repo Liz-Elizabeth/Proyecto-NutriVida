@@ -1,25 +1,34 @@
 
-import React from 'react'
+/*
+  Importamos el átomo reutilizable Boton.
 
-// Molécula que agrupa los enlaces de acceso de NutriVida
+  ../ permite salir de la carpeta moleculas
+  y entrar a la carpeta atomos.
+*/
+import Boton from '../atomos/Boton.jsx'
+
+// Molécula que agrupa los botones de acceso
 function BotonesAcceso() {
   return (
-    // Contenedor original para organizar los dos botones
     <div className="acceso">
 
-      {/* Enlace a la futura página de inicio de sesión */}
-      <a href="/login" className="boton-login">
-        Iniciar sesión
-      </a>
+      {/* Botón para ingresar a NutriVida */}
+      <Boton
+        texto="Iniciar sesión"
+        enlace="/login"
+        clase="boton-login"
+      />
 
-      {/* Enlace a la futura página de registro */}
-      <a href="/registro" className="boton-registro">
-        Registrarse
-      </a>
+      {/* Botón para registrar una cuenta */}
+      <Boton
+        texto="Registrarse"
+        enlace="/registro"
+        clase="boton-registro"
+      />
 
     </div>
   )
 }
 
-// Permite utilizar este componente desde Header.jsx
+// Exportamos la molécula para utilizarla en Header.jsx
 export default BotonesAcceso

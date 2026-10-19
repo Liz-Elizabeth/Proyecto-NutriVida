@@ -273,7 +273,7 @@ header {
     background-image:
         linear-gradient(rgba(245, 248, 243, 0.90),
             rgba(245, 248, 243, 0.90)),
-        url("../assets/img/salud-y-bienestar.png");
+        url("./assets/img/salud-y-bienestar.png");
 
     background-size: cover;
 
@@ -555,7 +555,7 @@ header {
     background-image:
         linear-gradient(rgba(245, 248, 243, 0.82),
             rgba(245, 248, 243, 0.82)),
-        url("../assets/img/salud-y-bienestar.png");
+        url("./assets/img/salud-y-bienestar.png");
 
     background-size: cover;
 
@@ -640,7 +640,7 @@ header {
 
 .especialidades {
     background-image:
-        url("../assets/img/habitos-saludables.png");
+        url("./assets/img/habitos-saludables.png");
 
     background-size: cover;
 
