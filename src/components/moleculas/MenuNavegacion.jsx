@@ -1,27 +1,50 @@
 
+/*
+  MOLÉCULA: MenuNavegacion.jsx
+
+  Menú principal de NutriVida.
+
+  Conserva los enlaces originales
+  y agrega Carrito y Mi Perfil.
+*/
+
 import React from 'react'
 
-// Molécula que contiene los enlaces del menú principal
+import { Link } from 'react-router-dom'
+
 function MenuNavegacion() {
+
   return (
-    // nav identifica el menú de navegación
     <nav className="menu">
 
-      {/* Ruta principal de NutriVida */}
+      {/* Enlaces originales */}
       <a href="/">Inicio</a>
 
-      {/* Ruta de los servicios nutricionales */}
       <a href="/servicios">Servicios</a>
 
-      {/* Secciones ubicadas dentro de Inicio */}
       <a href="/#nosotros">Nosotros</a>
+
       <a href="/#especialidades">Especialidades</a>
+
       <a href="/#profesionales">Profesionales</a>
+
       <a href="/#contacto">Contacto</a>
+
+      {/* Carrito de compras */}
+      <Link
+        to="/carrito"
+        aria-label="Ver carrito de compras"
+      >
+        🛒 Carrito
+      </Link>
+
+      {/* Perfil del usuario */}
+      <Link to="/perfil">
+        Mi perfil
+      </Link>
 
     </nav>
   )
 }
 
-// Permite importar el menú desde Header.jsx
 export default MenuNavegacion

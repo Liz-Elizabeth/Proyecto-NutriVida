@@ -23,7 +23,8 @@ import Profesionales from '../components/organismos/Profesionales.jsx'
 import Bienestar from '../components/organismos/Bienestar.jsx'
 // Importamos el organismo de Educación Nutricional
 import VideoEducativo from '../components/organismos/VideoEducativo.jsx'
-
+// Importamos el organismo de Contacto
+import Contacto from '../components/organismos/Contacto.jsx'
 
 
 
@@ -55,7 +56,8 @@ function Inicio() {
       {/* Octava sección: Educación Nutricional */}
       <VideoEducativo />
 
-
+      {/* Novena sección: Contacto */}
+      <Contacto />
 
 
     </main>

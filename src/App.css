@@ -2114,5 +2114,551 @@ footer {
 
         gap: 15px;
     }
+ }
+    
+/* ==========================================
+   NUTRIVIDA - PANEL DE ADMINISTRACIÓN
 
+   Estos estilos se aplican solamente
+   dentro de .panel-administrador.
+   ========================================== */
+
+/* CONTENEDOR PRINCIPAL */
+
+.panel-administrador {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 35px;
+  background-color: #f5f8f3;
+  border-radius: 18px;
+  color: #203e29;
 }
+
+.panel-administrador h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1d482c;
+}
+
+/* BOTÓN CERRAR SESIÓN */
+
+.panel-administrador .boton-cerrar-sesion {
+  background-color: #ffffff;
+  color: #245535;
+  border: 1px solid #245535;
+  padding: 11px 20px;
+  border-radius: 9px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.panel-administrador .boton-cerrar-sesion:hover {
+  background-color: #e3eee3;
+}
+
+/* SECCIÓN DE GESTIÓN */
+
+.panel-administrador > section {
+  background-color: #ffffff;
+  padding: 30px;
+  border: 1px solid #dce7d9;
+  border-radius: 15px;
+}
+
+.panel-administrador h2 {
+  color: #245535;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+.panel-administrador h3 {
+  color: #245535;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+/* FORMULARIO PARA AGREGAR SERVICIOS */
+
+.panel-administrador > section > form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 10px;
+  background-color: #f5f8f3;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+/* Ordenamos las etiquetas y sus campos */
+
+.panel-administrador > section > form > label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.panel-administrador > section > form > input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.panel-administrador > section > form > label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.panel-administrador > section > form > input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.panel-administrador > section > form > button {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin-top: 10px;
+}
+
+/* ETIQUETAS Y CAMPOS */
+
+.panel-administrador label {
+  font-weight: 600;
+  color: #294d33;
+}
+
+.panel-administrador input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #bdcfc0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font: inherit;
+}
+
+.panel-administrador input:focus {
+  outline: 2px solid #65976b;
+  outline-offset: 2px;
+}
+
+/* BOTONES DEL CRUD */
+
+.panel-administrador section button {
+  padding: 11px 19px;
+  border-radius: 8px;
+  border: 1px solid #245535;
+  background-color: #245535;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.panel-administrador section button:hover {
+  background-color: #367247;
+}
+
+/* LISTA DE SERVICIOS */
+
+.panel-administrador ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.panel-administrador li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background-color: #f8faf7;
+  border: 1px solid #dce7d9;
+  border-radius: 12px;
+}
+
+/* IMAGEN GENÉRICA */
+
+.panel-administrador li > img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* NOMBRE Y PRECIO */
+
+.panel-administrador li > p {
+  flex: 1;
+  min-width: 180px;
+  margin: 0;
+  font-weight: 600;
+  color: #264b31;
+}
+
+/* FORMULARIO DE EDICIÓN */
+
+.panel-administrador li > form {
+  width: 100%;
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  background-color: #edf4eb;
+  border-radius: 10px;
+}
+
+.panel-administrador li > form h4 {
+  margin: 0;
+  color: #245535;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 700px) {
+
+  .panel-administrador {
+    margin: 20px 12px;
+    padding: 18px;
+  }
+
+  .panel-administrador > section {
+    padding: 18px;
+  }
+
+  .panel-administrador > section > form {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .panel-administrador > section > form > label,
+  .panel-administrador > section > form > input,
+  .panel-administrador > section > form > button {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .panel-administrador li {
+    align-items: flex-start;
+  }
+
+  .panel-administrador li > p {
+    flex-basis: 100%;
+  }
+}
+
+
+
+
+/*
+  NUTRIVIDA - CARRITO
+
+  Estilos exclusivos de la página Carrito.
+  Conservamos los tonos verdes de NutriVida.
+*/
+
+.pagina-carrito {
+  padding: 45px 16px 65px;
+  background-color: #f5f8f3;
+  min-height: 65vh;
+  color: #203e29;
+}
+
+.pagina-carrito h1 {
+  color: #1d482c;
+  margin-bottom: 12px;
+}
+
+.carrito-introduccion {
+  margin-bottom: 30px;
+}
+
+.carrito-seccion {
+  background-color: #ffffff;
+  border: 1px solid #dce7d9;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.carrito-seccion h2 {
+  color: #245535;
+  margin-bottom: 22px;
+  font-size: 23px;
+}
+
+.carrito-servicios {
+  display: grid;
+  gap: 15px;
+}
+
+.carrito-servicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  border: 1px solid #dce7d9;
+  border-radius: 10px;
+  background-color: #f8faf7;
+}
+
+.carrito-servicio h3,
+.carrito-producto h3 {
+  color: #245535;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.carrito-servicio p,
+.carrito-producto p {
+  margin-bottom: 10px;
+}
+
+.pagina-carrito button {
+  border: none;
+  border-radius: 8px;
+  background-color: #245535;
+  color: #ffffff;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pagina-carrito button:hover:not(:disabled) {
+  background-color: #367247;
+}
+
+.pagina-carrito button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.carrito-producto {
+  padding: 18px 0;
+  border-bottom: 1px solid #dce7d9;
+}
+
+.carrito-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.carrito-cantidad span {
+  min-width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pagina-carrito .carrito-eliminar {
+  background-color: #a43d3d;
+}
+
+.pagina-carrito .carrito-vaciar {
+  background-color: #ffffff;
+  border: 1px solid #245535;
+  color: #245535;
+}
+
+.carrito-total {
+  margin-top: 24px;
+  padding-top: 18px;
+}
+
+.carrito-total h3 {
+  margin-bottom: 20px;
+  color: #1d482c;
+}
+
+.carrito-volver {
+  display: inline-block;
+  color: #245535;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+
+  .pagina-carrito {
+    padding: 25px 10px;
+  }
+
+  .carrito-seccion {
+    padding: 18px;
+  }
+
+  .carrito-servicio {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================
+   NUTRIVIDA - BOTÓN AGREGAR AL CARRITO
+   ========================================== */
+
+/* Aplicamos el diseño solo en las tarjetas */
+.tarjeta-servicio .boton-agregar-carrito {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 18px;
+
+  background-color: #245535;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta-servicio .boton-agregar-carrito:hover {
+  background-color: #367247;
+}
+
+/* ==========================================
+   NUTRIVIDA - PÁGINA MI PERFIL
+   ========================================== */
+
+.pagina-perfil {
+  min-height: 65vh;
+  background-color: #f5f8f3;
+  padding: 45px 20px;
+}
+
+.contenedor-perfil {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 35px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: 1px solid #dce7d9;
+  color: #203e29;
+}
+
+.contenedor-perfil h1 {
+  color: #245535;
+  margin-bottom: 12px;
+}
+
+.perfil-descripcion {
+  margin-bottom: 25px;
+}
+
+.contenedor-perfil form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contenedor-perfil label {
+  font-weight: 600;
+  color: #245535;
+}
+
+.contenedor-perfil input,
+.contenedor-perfil select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b9cdbb;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #203e29;
+  margin-bottom: 12px;
+}
+
+.contenedor-perfil input:disabled,
+.contenedor-perfil select:disabled {
+  background-color: #f2f5f0;
+  color: #536755;
+}
+
+.perfil-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.perfil-botones button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #245535;
+  border: 1px solid #245535;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.perfil-botones .perfil-cancelar {
+  background-color: #ffffff;
+  color: #245535;
+}
+
+.perfil-mensaje {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #edf4e9;
+  color: #245535;
+}
+
+/* ==========================================
+   NUTRIVIDA - PÁGINA 404
+   ========================================== */
+
+.pagina-no-encontrada {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f5f8f3;
+}
+
+.contenido-no-encontrado {
+  max-width: 550px;
+  text-align: center;
+  color: #203e29;
+}
+
+.contenido-no-encontrado h1 {
+  font-size: 80px;
+  color: #245535;
+  margin-bottom: 10px;
+}
+
+.contenido-no-encontrado h2 {
+  margin-bottom: 15px;
+}
+
+.contenido-no-encontrado p {
+  margin-bottom: 30px;
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 600px) {
+
+  .contenedor-perfil {
+    padding: 20px;
+  }
+
+  .contenido-no-encontrado h1 {
+    font-size: 60px;
+  }
+}
+
+
+
