@@ -2660,5 +2660,92 @@ footer {
   }
 }
 
+/* ==========================================
+   AJUSTE RESPONSIVE - NUTRIVIDA
+   Evita que la aplicación React quede
+   más estrecha que la pantalla.
+   ========================================== */
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  min-width: 0;
+}
 
 
+/* ==========================================
+   NUTRIVIDA - CONTACTO RESPONSIVE
+   Tablet y celular
+   ========================================== */
+
+@media (max-width: 900px) {
+
+  .contacto-columnas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .info-clinica,
+  .formulario {
+    width: 100%;
+    min-width: 0;
+  }
+
+}
+
+
+
+/* ==========================================
+   NUTRIVIDA - ENLACES DEL FOOTER
+   Mantener el diseño original
+   ========================================== */
+
+/* Computadores y tablets */
+.footer-contenido a {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+  .footer-contenido a {
+    display: block;
+    width: fit-content;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+}
+
+/* ==========================================
+   NUTRIVIDA - ADMINISTRADOR RESPONSIVE
+   Formulario en una columna para celulares
+   ========================================== */
+
+@media (max-width: 700px) {
+
+  .panel-administrador > section > form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .panel-administrador > section > form > label:nth-of-type(1),
+  .panel-administrador > section > form > label:nth-of-type(2),
+  .panel-administrador > section > form > input:nth-of-type(1),
+  .panel-administrador > section > form > input:nth-of-type(2),
+  .panel-administrador > section > form > button {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .panel-administrador > section > form > button {
+    width: 100%;
+  }
+
+}

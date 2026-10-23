@@ -2,68 +2,96 @@
 /*
   MOLÉCULA: FormularioContacto.jsx
 
-  Formulario de contacto original de NutriVida
+  Formulario de contacto de NutriVida
   migrado a React.
 
-  Utiliza useState para manejar:
-  - Nombre
-  - Correo electrónico
-  - Mensaje
-  - Resultado de la validación
+  Permite:
+  - Ingresar nombre
+  - Ingresar correo electrónico
+  - Escribir una consulta
+  - Validar los datos
+  - Mostrar mensajes de error o confirmación
 
-  No realiza envíos reales a un servidor.
+  IMPORTANTE:
+  No envía correos reales.
+  Es una simulación académica.
 */
 
-// Importamos useState desde React
 import { useState } from 'react'
 
 function FormularioContacto() {
 
-  // ESTADO 1: Guarda el nombre
+  // ESTADO 1: Nombre del usuario
   const [nombre, setNombre] = useState('')
 
-  // ESTADO 2: Guarda el correo
+  // ESTADO 2: Correo electrónico
   const [correo, setCorreo] = useState('')
 
-  // ESTADO 3: Guarda el mensaje
+  // ESTADO 3: Consulta o mensaje
   const [mensaje, setMensaje] = useState('')
 
-  // ESTADO 4: Guarda el resultado del formulario
+  // ESTADO 4: Mensaje de validación
   const [resultado, setResultado] = useState('')
 
-  // Función que se ejecuta al enviar el formulario
-  const manejarEnvio = (evento) => {
+  // ==========================================
+  // ENVIAR FORMULARIO
+  // ==========================================
 
-    // Evita que se recargue la página
+  function manejarEnvio(evento) {
+
+    // Evitamos que se recargue la página
     evento.preventDefault()
 
-    // Eliminamos espacios al inicio y al final
+    // Quitamos espacios innecesarios
     const nombreLimpio = nombre.trim()
     const correoLimpio = correo.trim()
     const mensajeLimpio = mensaje.trim()
 
-    // Validamos que ningún campo esté vacío
-    if (!nombreLimpio || !correoLimpio || !mensajeLimpio) {
+    // ==========================================
+    // VALIDACIÓN 1: CAMPOS OBLIGATORIOS
+    // ==========================================
+
+    if (
+      nombreLimpio === '' ||
+      correoLimpio === '' ||
+      mensajeLimpio === ''
+    ) {
+
       setResultado('Debes completar todos los campos.')
+
       return
     }
 
-    // Verificamos un formato básico de correo
+    // ==========================================
+    // VALIDACIÓN 2: CORREO ELECTRÓNICO
+    // ==========================================
+
     const formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     if (!formatoCorreo.test(correoLimpio)) {
-      setResultado('Ingresa un correo electrónico válido.')
+
+      setResultado('Ingresa un correo electrónico válido. @duoc.cl- @gmail.com')
+
       return
     }
 
-    // Mensaje de confirmación de demostración
-    setResultado('Formulario validado correctamente. Envío de prueba.')
+    // ==========================================
+    // CONFIRMACIÓN DE DEMOSTRACIÓN
+    // ==========================================
 
-    // Limpiamos los campos
+    setResultado(
+      'Datos validados correctamente. Este formulario es una demostración y no envía mensajes reales.'
+    )
+
+    // Limpiamos los campos después de validar
     setNombre('')
     setCorreo('')
     setMensaje('')
   }
+
+  // ==========================================
+  // INTERFAZ VISUAL ORIGINAL
+  // ==========================================
 
   return (
     <form
@@ -73,7 +101,7 @@ function FormularioContacto() {
       noValidate
     >
 
-      {/* CAMPO 1: Nombre */}
+      {/* CAMPO 1: NOMBRE */}
       <label htmlFor="nombreContacto">
         Nombre
       </label>
@@ -89,7 +117,7 @@ function FormularioContacto() {
         }}
       />
 
-      {/* CAMPO 2: Correo electrónico */}
+      {/* CAMPO 2: CORREO ELECTRÓNICO */}
       <label htmlFor="correoContacto">
         Correo electrónico
       </label>
@@ -105,7 +133,7 @@ function FormularioContacto() {
         }}
       />
 
-      {/* CAMPO 3: Mensaje */}
+      {/* CAMPO 3: MENSAJE */}
       <label htmlFor="mensajeContacto">
         Mensaje
       </label>
@@ -119,18 +147,23 @@ function FormularioContacto() {
           setMensaje(evento.target.value)
           setResultado('')
         }}
-      ></textarea>
+      />
 
-      {/* BOTÓN ORIGINAL */}
+      {/* BOTÓN PARA VALIDAR EL FORMULARIO */}
       <button type="submit">
         Enviar mensaje
       </button>
 
-      {/* Mostramos el resultado de la validación */}
-      {resultado && (
-        <p role="status" aria-live="polite">
+      {/* RESULTADO DE LA VALIDACIÓN */}
+      {resultado !== '' && (
+
+        <p
+          role="status"
+          aria-live="polite"
+        >
           {resultado}
         </p>
+
       )}
 
     </form>

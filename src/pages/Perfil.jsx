@@ -22,7 +22,7 @@ import {
   cerrarSesionCliente
 } from '../datos/cuentas.js'
 
-// Valores que usaremos si no hay un paciente
+// Datos vacíos cuando no hay información disponible
 const perfilVacio = {
   nombre: '',
   apellidos: '',
@@ -34,37 +34,41 @@ function Perfil() {
 
   const navigate = useNavigate()
 
-  // Recuperamos al paciente que inició sesión
+  // Datos del paciente que inició sesión
   const [perfil, setPerfil] = useState(
     () => obtenerClienteActual()
   )
 
-  // Copia de los datos para poder editarlos
+  // Copia de los datos que se pueden modificar
   const [borrador, setBorrador] = useState(
     () => obtenerClienteActual() || perfilVacio
   )
 
-  // false = campos bloqueados
-  // true = campos habilitados
+  // false: los campos están bloqueados
+  // true: los campos están habilitados
   const [editando, setEditando] = useState(false)
 
+  // Mensaje que verá el paciente
   const [mensaje, setMensaje] = useState('')
 
   // ==========================================
-  // EDITAR DATOS
+  // COMENZAR EDICIÓN
   // ==========================================
 
   function comenzarEdicion() {
 
+    // Copiamos los datos guardados
     setBorrador({ ...perfil })
 
+    // Habilitamos los campos
     setEditando(true)
 
+    // Eliminamos mensajes anteriores
     setMensaje('')
   }
 
   // ==========================================
-  // CAMBIAR UN CAMPO
+  // MODIFICAR LOS CAMPOS
   // ==========================================
 
   function cambiarCampo(evento) {
@@ -84,7 +88,14 @@ function Perfil() {
 
   function guardarPerfil(evento) {
 
+    // Evita recargar la página
     evento.preventDefault()
+
+    // Solo permitimos guardar cuando
+    // el modo de edición está activado
+    if (!editando) {
+      return
+    }
 
     const datosActualizados = {
       nombre: borrador.nombre.trim(),
@@ -93,7 +104,7 @@ function Perfil() {
       objetivo: borrador.objetivo
     }
 
-    // Campos obligatorios
+    // Validamos que los campos no estén vacíos
     if (
       datosActualizados.nombre === '' ||
       datosActualizados.apellidos === '' ||
@@ -107,7 +118,7 @@ function Perfil() {
       return
     }
 
-    // Dominios permitidos en NutriVida
+    // Validamos los dominios permitidos
     const expresionCorreo =
       /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/
 
@@ -120,7 +131,7 @@ function Perfil() {
       return
     }
 
-    // Actualizamos la cuenta guardada
+    // Guardamos los datos en la cuenta del paciente
     const resultado = actualizarClienteActual(
       datosActualizados
     )
@@ -132,14 +143,15 @@ function Perfil() {
       return
     }
 
-    // Actualizamos lo que muestra React
+    // Actualizamos los datos mostrados
     setPerfil(datosActualizados)
 
     setBorrador(datosActualizados)
 
-    // Volvemos a bloquear los campos
+    // Bloqueamos los campos otra vez
     setEditando(false)
 
+    // Este mensaje aparece SOLO al guardar
     setMensaje('Perfil actualizado correctamente.')
   }
 
@@ -149,10 +161,10 @@ function Perfil() {
 
   function cancelarEdicion() {
 
-    // Restauramos los datos anteriores
+    // Recuperamos los datos originales
     setBorrador({ ...perfil })
 
-    // Bloqueamos nuevamente los campos
+    // Bloqueamos los campos
     setEditando(false)
 
     setMensaje('Edición cancelada.')
@@ -170,7 +182,7 @@ function Perfil() {
   }
 
   // ==========================================
-  // SI NADIE HA INICIADO SESIÓN
+  // SI NO EXISTE UNA SESIÓN DE PACIENTE
   // ==========================================
 
   if (perfil === null) {
@@ -187,7 +199,10 @@ function Perfil() {
             tus datos personales.
           </p>
 
-          <Link to="/login" className="boton-principal">
+          <Link
+            to="/login"
+            className="boton-principal"
+          >
             Iniciar sesión
           </Link>
 
@@ -213,15 +228,19 @@ function Perfil() {
           de NutriVida.
         </p>
 
-        {/* MENSAJE */}
+        {/* MENSAJES */}
         {mensaje !== '' && (
 
-          <p className="perfil-mensaje" role="status">
+          <p
+            className="perfil-mensaje"
+            role="status"
+          >
             {mensaje}
           </p>
 
         )}
 
+        {/* FORMULARIO DE LOS DATOS */}
         <form onSubmit={guardarPerfil}>
 
           {/* NOMBRE */}
@@ -254,7 +273,7 @@ function Perfil() {
             disabled={!editando}
           />
 
-          {/* CORREO */}
+          {/* CORREO ELECTRÓNICO */}
           <label htmlFor="perfilCorreo">
             Correo electrónico
           </label>
@@ -316,39 +335,49 @@ function Perfil() {
 
           </select>
 
-          {/* BOTONES */}
-          <div className="perfil-botones">
+          {/* GUARDAR Y CANCELAR */}
+          {/* Solo aparecen cuando estamos editando */}
 
-            {editando ? (
+          {editando && (
 
-              <>
-                <button type="submit">
-                  Guardar cambios
-                </button>
+            <div className="perfil-botones">
 
-                <button
-                  type="button"
-                  className="perfil-cancelar"
-                  onClick={cancelarEdicion}
-                >
-                  Cancelar
-                </button>
-              </>
-
-            ) : (
+              <button type="submit">
+                Guardar cambios
+              </button>
 
               <button
                 type="button"
-                onClick={comenzarEdicion}
+                className="perfil-cancelar"
+                onClick={cancelarEdicion}
               >
-                Editar datos
+                Cancelar
               </button>
 
-            )}
+            </div>
+
+          )}
+
+        </form>
+
+        {/* EDITAR DATOS */}
+        {/* Este botón está FUERA del formulario */}
+        {/* para que nunca envíe el formulario. */}
+
+        {!editando && (
+
+          <div className="perfil-botones">
+
+            <button
+              type="button"
+              onClick={comenzarEdicion}
+            >
+              Editar datos
+            </button>
 
           </div>
 
-        </form>
+        )}
 
         {/* CERRAR SESIÓN */}
         <div className="perfil-botones">
